@@ -1,0 +1,21 @@
+
+Hospa V2
+
+1. Removed noisy prefix from php files ✅
+
+2. Remove "php" from doc links
+3. Remove "php" from admin links
+
+4. Test all doc pages, fix issues if any
+5. Test all doc pages, fix issues if any
+
+6. Fix & delete duplicate files
+7. Redesign the doc dashboard layout
+8. Redesign the admin dashboard layout
+
+9. Add terms, privacy, about, contact us pages
+10. Add basic website to admin
+11. Add demo database reset (backend, button in auth, dashboard)
+
+12. Publish to different php code sites and EqualFaith-Free
+
