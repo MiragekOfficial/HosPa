@@ -126,7 +126,7 @@
                                                  
                                                     <td>
                                                         <a href="manage-payrolls.php?delete_pay_number=<?php echo $row->pay_number;?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete</a>
-                                                        <a href="his_admin_update_single_employee_payroll.php?pay_number=<?php echo $row->pay_number;?>" class="badge badge-success"><i class="fas fa-edit "></i>Update Payroll</a>
+                                                        <a href="update-single-employee-payroll.php?pay_number=<?php echo $row->pay_number;?>" class="badge badge-success"><i class="fas fa-edit "></i>Update Payroll</a>
 
                                                     </td>
                                                 </tr>

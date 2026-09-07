@@ -25,20 +25,20 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_doc_register_patient.php">Register Patient</a>
+                                        <a href="register-patient.php">Register Patient</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_view_patients.php">View Patients</a>
+                                        <a href="view-patients.php">View Patients</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_patient.php">Manage Patients</a>
+                                        <a href="manage-patient.php">Manage Patients</a>
                                     </li>
                                     <hr>
                                     <li>
                                         <a href="discharge-patient.php">Discharge Patients</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_transfer.php">Patient Transfers</a>
+                                        <a href="patient-transfer.php">Patient Transfers</a>
                                     </li>
                                 </ul>
                             </li>
@@ -53,33 +53,33 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_doc_add_pharm_cat.php">Add Pharm Category</a>
+                                        <a href="add-pharm-cat.php">Add Pharm Category</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_view_pharm_cat.php">View Pharm Category</a>
+                                        <a href="view-pharm-cat.php">View Pharm Category</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_pharm_cat.php">Manage Pharm Category</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a href="his_doc_add_pharmaceuticals.php">Add Pharmaceuticals</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_view_pharmaceuticals.php">View Pharmaceuticals</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_manage_pharmaceuticals.php">Manage Pharmaceuticals</a>
+                                        <a href="manage-pharm-cat.php">Manage Pharm Category</a>
                                     </li>
                                     <hr>
                                     <li>
-                                        <a href="his_doc_add_presc.php">Add Prescriptions</a>
+                                        <a href="add-pharmaceuticals.php">Add Pharmaceuticals</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_view_presc.php">View Prescriptions</a>
+                                        <a href="view-pharmaceuticals.php">View Pharmaceuticals</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_presc.php">Manage Prescriptions</a>
+                                        <a href="manage-pharmaceuticals.php">Manage Pharmaceuticals</a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <a href="add-presc.php">Add Prescriptions</a>
+                                    </li>
+                                    <li>
+                                        <a href="view-presc.php">View Prescriptions</a>
+                                    </li>
+                                    <li>
+                                        <a href="manage-presc.php">Manage Prescriptions</a>
                                     </li>
                                 </ul>
                             </li>
@@ -94,11 +94,11 @@
                                 <ul class="nav-second-level" aria-expanded="false">
                                    
                                     <li>
-                                        <a href="his_doc_pharm_inventory.php">Pharmaceuticals</a>
+                                        <a href="pharm-inventory.php">Pharmaceuticals</a>
                                     </li>
 
                                     <li>
-                                        <a href="his_doc_equipments_inventory.php">Assets</a>
+                                        <a href="equipments-inventory.php">Assets</a>
                                     </li>
                                     
                                 </ul>
@@ -112,17 +112,17 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_doc_patient_lab_test.php">Patient Lab Tests</a>
+                                        <a href="patient-lab-test.php">Patient Lab Tests</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_lab_result.php">Patient Lab Results</a>
+                                        <a href="patient-lab-result.php">Patient Lab Results</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_lab_vitals.php">Patient Vitals</a>
+                                        <a href="patient-lab-vitals.php">Patient Vitals</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="his_doc_lab_report.php">Lab Reports</a>
+                                        <a href="lab-report.php">Lab Reports</a>
                                     </li>
                                     <hr>
                                     
@@ -138,7 +138,7 @@
                                 <ul class="nav-second-level" aria-expanded="false">
                                     
                                     <li>
-                                        <a href="his_doc_view_payrolls.php">My Payrolls</a>
+                                        <a href="view-payrolls.php">My Payrolls</a>
                                     </li>
                                 </ul>
                             </li>

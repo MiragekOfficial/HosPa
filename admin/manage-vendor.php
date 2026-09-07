@@ -127,8 +127,8 @@
 
                                                     
                                                     <td>
-                                                        <a href="his_admin_view_single_vendor.php?v_number=<?php echo $row->v_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
-                                                        <a href="his_admin_update_single_vendor.php?v_number=<?php echo $row->v_number;?>" class="badge badge-success"><i class="fas fa-edit"></i> Update</a>
+                                                        <a href="view-single-vendor.php?v_number=<?php echo $row->v_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
+                                                        <a href="update-single-vendor.php?v_number=<?php echo $row->v_number;?>" class="badge badge-success"><i class="fas fa-edit"></i> Update</a>
                                                         <a href="manage-vendor.php?delete_vendor_number=<?php echo $row->v_number?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete Record</a>
                                                     </td>
                                                 </tr>

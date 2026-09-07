@@ -42,7 +42,7 @@
                     </div> -->
 
                     <!-- item-->
-                    <!-- <a href="his_admin_account.php" class="dropdown-item notify-item">
+                    <!-- <a href="account.php" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>My Account</span>
                     </a> -->
@@ -51,7 +51,7 @@
                     <!-- <div class="dropdown-divider"></div> -->
 
                     <!-- item-->
-                    <a href="his_admin_logout_partial.php" class="dropdown-item notify-item">
+                    <a href="logout-partial.php" class="dropdown-item notify-item">
                         <i class="fe-log-out"></i>
                         <span>Logout</span>
                     </a>
@@ -65,7 +65,7 @@
 
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="his_admin_dashboard.php" class="logo text-center">
+            <a href="dashboard.php" class="logo text-center">
                 <span class="logo-lg">
                     <img src="assets/images/logo-light.png" alt="" height="18">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
@@ -91,44 +91,44 @@
                 </a>
                 <div class="dropdown-menu">
                     <!-- item-->
-                    <a href="his_admin_add_employee.php" class="dropdown-item">
+                    <a href="add-employee.php" class="dropdown-item">
                         <i class="fe-users mr-1"></i>
                         <span>Employee</span>
                     </a>
 
                     <!-- item-->
-                    <a href="his_admin_register_patient.php" class="dropdown-item">
+                    <a href="register-patient.php" class="dropdown-item">
                         <i class="fe-activity mr-1"></i>
                         <span>Patient</span>
                     </a>
 
                     <!-- item-->
-                    <a href="his_admin_add_payroll.php" class="dropdown-item">
+                    <a href="add-payroll.php" class="dropdown-item">
                         <i class="fe-layers mr-1"></i>
                         <span>Payroll</span>
                     </a>
 
                     <!-- item-->
-                    <a href="his_admin_add_vendor.php" class="dropdown-item">
+                    <a href="add-vendor.php" class="dropdown-item">
                         <i class="fe-shopping-cart mr-1"></i>
                         <span>Vendor</span>
                     </a>
 
 
                     <!-- item-->
-                    <a href="his_admin_add_medical_record.php" class="dropdown-item">
+                    <a href="add-medical-record.php" class="dropdown-item">
                         <i class="fe-list mr-1"></i>
                         <span>Medical Report</span>
                     </a>
 
                     <!-- item-->
-                    <a href="his_admin_lab_report.php" class="dropdown-item">
+                    <a href="lab-report.php" class="dropdown-item">
                         <i class="fe-hard-drive mr-1"></i>
                         <span>Laboratory Report</span>
                     </a>
 
                     <!-- item-->
-                    <a href="his_admin_surgery_records.php" class="dropdown-item">
+                    <a href="surgery-records.php" class="dropdown-item">
                         <i class="fe-anchor mr-1"></i>
                         <span>Surgical/Theatre Report</span>
                     </a>

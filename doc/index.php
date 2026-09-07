@@ -151,8 +151,8 @@ if (isset($_POST['doc_login'])) {
 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
-                            <p> <a href="his_doc_reset_pwd.php" class="text-white-50 ml-1">Forgot your password?</a></p>
-                            <!-- <p class="text-white-50">Don't have an account? <a href="his_admin_register.php" class="text-white ml-1"><b>Sign Up</b></a></p>-->
+                            <p> <a href="reset-pwd.php" class="text-white-50 ml-1">Forgot your password?</a></p>
+                            <!-- <p class="text-white-50">Don't have an account? <a href="register.php" class="text-white ml-1"><b>Sign Up</b></a></p>-->
                         </div> <!-- end col -->
                     </div>
                     <!-- end row -->

@@ -3,6 +3,6 @@
     unset($_SESSION['ad_id']);
     session_destroy();
 
-    header("Location: his_admin_logout.php");
+    header("Location: logout.php");
     exit;
 ?>

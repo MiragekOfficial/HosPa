@@ -130,8 +130,8 @@
                                                     <td>$ <?php echo $row->pay_emp_salary;?></td>
                                                  
                                                     <td>
-                                                       <!-- <a href="his_admin_manage_payrolls.php?delete_pay_number=<?php echo $row->pay_number;?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete</a> -->
-                                                        <a href="his_admin_generate_single_employee_payroll.php?pay_number=<?php echo $row->pay_number;?>&&pay_doc_number=<?php echo $row->pay_doc_number;?>" class="badge badge-success"><i class="fas fa-file-invoice-dollar "></i> Generate Payroll</a>
+                                                       <!-- <a href="manage-payrolls.php?delete_pay_number=<?php echo $row->pay_number;?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete</a> -->
+                                                        <a href="generate-single-employee-payroll.php?pay_number=<?php echo $row->pay_number;?>&&pay_doc_number=<?php echo $row->pay_doc_number;?>" class="badge badge-success"><i class="fas fa-file-invoice-dollar "></i> Generate Payroll</a>
 
                                                     </td>
                                                 </tr>

@@ -179,7 +179,7 @@ $doc_number = $_SESSION['doc_number'];
 
                         <!--Start Corporation Assets-->
                         <div class="col-md-6 col-xl-6">
-                            <a href="his_doc_view_payrolls.php">
+                            <a href="view-payrolls.php">
                                 <div class="widget-rounded-circle card-box">
                                     <div class="row">
                                         <div class="col-6">
@@ -254,7 +254,7 @@ $doc_number = $_SESSION['doc_number'];
                                                     <?php echo $row->pat_age; ?> Years
                                                 </td>
                                                 <td>
-                                                    <a href="his_doc_view_single_patient.php?pat_id=<?php echo $row->pat_id; ?>&&pat_number=<?php echo $row->pat_number; ?>&&pat_name=<?php echo $row->pat_fname; ?>_<?php echo $row->pat_lname; ?>"
+                                                    <a href="view-single-patient.php?pat_id=<?php echo $row->pat_id; ?>&&pat_number=<?php echo $row->pat_number; ?>&&pat_name=<?php echo $row->pat_fname; ?>_<?php echo $row->pat_lname; ?>"
                                                         class="btn btn-xs btn-success"><i class="mdi mdi-eye"></i>
                                                         View</a>
                                                 </td>

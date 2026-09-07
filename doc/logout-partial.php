@@ -9,6 +9,6 @@ include '../config.php';
     unset($_SESSION['doc_number']);
     session_destroy();
 
-    header("Location: his_doc_logout.php");
+    header("Location: logout.php");
     exit;
 ?>
