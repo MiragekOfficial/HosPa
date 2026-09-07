@@ -43,12 +43,12 @@
                     </div>
 
                     <!-- item-->
-                    <!-- <a href="account.php" class="dropdown-item notify-item">
+                    <!-- <a href="account" class="dropdown-item notify-item">
                         <i class="fas fa-user"></i>
                         <span>My Account</span>
                     </a> -->
 
-                    <a href="update-account.php" class="dropdown-item notify-item">
+                    <a href="update-account" class="dropdown-item notify-item">
                         <i class="fas fa-user-tag"></i>
                         <span>Update Account</span>
                     </a>
@@ -57,7 +57,7 @@
                     <div class="dropdown-divider"></div>
 
                     <!-- item-->
-                    <a href="logout-partial.php" class="dropdown-item notify-item">
+                    <a href="logout-partial" class="dropdown-item notify-item">
                         <i class="fe-log-out"></i>
                         <span>Logout</span>
                     </a>
@@ -71,7 +71,7 @@
 
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="dashboard.php" class="logo text-center">
+            <a href="dashboard" class="logo text-center">
                 <span class="logo-lg">
                     <img src="assets/images/logo-light.png" alt="" height="18">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
@@ -99,7 +99,7 @@
                     
 
                     <!-- item-->
-                    <a href="register-patient.php" class="dropdown-item">
+                    <a href="register-patient" class="dropdown-item">
                         <i class="fe-activity mr-1"></i>
                         <span>Patient</span>
                     </a>
@@ -107,7 +107,7 @@
 
 
                     <!-- item-->
-                    <a href="lab-report.php" class="dropdown-item">
+                    <a href="lab-report" class="dropdown-item">
                         <i class="fe-hard-drive mr-1"></i>
                         <span>Laboratory Report</span>
                     </a>

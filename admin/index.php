@@ -15,7 +15,7 @@
         //$ldate=date('d/m/Y h:i:s', time());
         if($rs)
             {//if its sucessfull
-                header("location:dashboard.php");
+                header("location:dashboard");
             }
 
         else
@@ -86,7 +86,7 @@
                             <div class="card-body p-4">
                                 
                                 <div class="text-center w-75 m-auto">
-                                    <a href="index.php">
+                                    <a href="index">
                                         <span><img src="assets/images/logo-dark.png" alt="" height="22"></span>
                                     </a>
                                     <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
@@ -138,8 +138,8 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p> <a href="pwd-reset.php" class="text-white-50 ml-1">Forgot your password?</a></p>
-                               <!-- <p class="text-white-50">Don't have an account? <a href="register.php" class="text-white ml-1"><b>Sign Up</b></a></p>-->
+                                <p> <a href="pwd-reset" class="text-white-50 ml-1">Forgot your password?</a></p>
+                               <!-- <p class="text-white-50">Don't have an account? <a href="register" class="text-white ml-1"><b>Sign Up</b></a></p>-->
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->

@@ -95,7 +95,7 @@
                             <div class="card-body p-4">
                                 
                                 <div class="text-center w-75 m-auto">
-                                    <a href="reset-pwd.php">
+                                    <a href="reset-pwd">
                                         <span><img src="assets/images/logo-dark.png" alt="" height="22"></span>
                                     </a>
                                     <p class="text-muted mb-4 mt-3">Enter your email address and we'll send you an email with instructions to reset your password.</p>
@@ -132,7 +132,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-white-50">Back to <a href="index.php" class="text-white ml-1"><b>Log in</b></a></p>
+                                <p class="text-white-50">Back to <a href="index" class="text-white ml-1"><b>Log in</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->

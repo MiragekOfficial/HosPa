@@ -34,13 +34,13 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index.php"></a>
+                    <a href="index"></a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="index.php">Home</a></li>
-                        <li><a href="backend/doc/index.php">Doctor's Login</a></li>
-                        <li><a href="backend/admin/index.php">Administrator Login</a></li>
+                        <li class="menu-active"><a href="index">Home</a></li>
+                        <li><a href="backend/doc/index">Doctor's Login</a></li>
+                        <li><a href="backend/admin/index">Administrator Login</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->		    		
                 </div>

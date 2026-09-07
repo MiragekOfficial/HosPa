@@ -81,7 +81,7 @@
                                     <div class="page-title-box">
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
-                                                <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                                                <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Manage Equipment</a></li>
                                                 <li class="breadcrumb-item active">Update Equipment</li>
                                             </ol>

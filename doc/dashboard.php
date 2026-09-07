@@ -156,7 +156,7 @@ $doc_number = $_SESSION['doc_number'];
                         <!--Start Vendors-->
 
                         <div class="col-md-6 col-xl-6">
-                            <a href="account.php">
+                            <a href="account">
                                 <div class="widget-rounded-circle card-box">
                                     <div class="row">
                                         <div class="col-6">
@@ -179,7 +179,7 @@ $doc_number = $_SESSION['doc_number'];
 
                         <!--Start Corporation Assets-->
                         <div class="col-md-6 col-xl-6">
-                            <a href="view-payrolls.php">
+                            <a href="view-payrolls">
                                 <div class="widget-rounded-circle card-box">
                                     <div class="row">
                                         <div class="col-6">

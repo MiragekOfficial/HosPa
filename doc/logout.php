@@ -29,7 +29,7 @@
                             <div class="card-body p-4">
                                 
                                 <div class="text-center w-75 m-auto">
-                                    <a href="logout.php">
+                                    <a href="logout">
                                         <span><img src="assets/images/logo-dark.png" alt="" height="22"></span>
                                     </a>
                                 </div>
@@ -55,7 +55,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-white-50">Back to <a href="index.php" class="text-white ml-1"><b>Log In</b></a> OR <a href="../../index.php" class="text-white ml-1"><b>HomePage</b></a></p>
+                                <p class="text-white-50">Back to <a href="index" class="text-white ml-1"><b>Log In</b></a> OR <a href="../../index" class="text-white ml-1"><b>HomePage</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
