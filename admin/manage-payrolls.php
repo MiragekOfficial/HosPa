@@ -4,10 +4,10 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
-  if(isset($_GET['delete_pres_number']))
+  if(isset($_GET['delete_pay_number']))
   {
-        $id=intval($_GET['delete_pres_number']);
-        $adn="DELETE FROM his_prescriptions WHERE pres_number=?";
+        $id=intval($_GET['delete_pay_number']);
+        $adn="delete from his_payrolls where pay_number=?";
         $stmt= $mysqli->prepare($adn);
         $stmt->bind_param('i',$id);
         $stmt->execute();
@@ -15,13 +15,14 @@
   
           if($stmt)
           {
-            $success = "Prescription Records Deleted";
+            $success = "Payroll Record Deleted";
           }
             else
             {
                 $err = "Try Again Later";
             }
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -59,11 +60,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pharmacy</a></li>
-                                            <li class="breadcrumb-item active">Manage Prescriptions</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Payroll</a></li>
+                                            <li class="breadcrumb-item active">Manage Payroll</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Prescriptions</h4>
+                                    <h4 class="page-title">Employee Details</h4>
                                 </div>
                             </div>
                         </div>     
@@ -96,21 +97,16 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Address</th>
-                                                <th data-hide="phone">Ailment</th>
-                                                <th data-hide="phone">Age</th>
-                                                <th data-hide="phone">Category</th>
+                                                <th data-toggle="true">Employee Name</th>
+                                                <th data-toggle="true">Employee Number</th>
+                                                <th data-hide="phone">Payroll Number</th>
+                                                <th data-hide="phone">Employee Salary</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
                                             <?php
-                                            /*
-                                                *get details of allpatients
-                                                *
-                                            */
-                                                $ret="SELECT * FROM  his_prescriptions ORDER BY RAND() "; 
+                                            
+                                                $ret="SELECT * FROM  his_payrolls ORDER BY RAND() "; 
                                                 //sql code to get to ten docs  randomly
                                                 $stmt= $mysqli->prepare($ret) ;
                                                 $stmt->execute() ;//ok
@@ -123,16 +119,14 @@
                                                 <tbody>
                                                 <tr>
                                                     <td><?php echo $cnt;?></td>
-                                                    <td><?php echo $row->pres_pat_name;?></td>
-                                                    <td><?php echo $row->pres_pat_number;?></td>
-                                                    <td><?php echo $row->pres_pat_addr;?></td>
-                                                    <td><?php echo $row->pres_pat_ailment;?></td>
-                                                    <td><?php echo $row->pres_pat_age;?> Years</td>
-                                                    <td><?php echo $row->pres_pat_type;?></td>
+                                                    <td><?php echo $row->pay_doc_name;?></td>
+                                                    <td><?php echo $row->pay_doc_number;?></td>
+                                                    <td><?php echo $row->pay_number;?></td>   
+                                                    <td>$ <?php echo $row->pay_emp_salary;?></td>
+                                                 
                                                     <td>
-                                                        <a href="his_admin_view_single_pres.php?pres_number=<?php echo $row->pres_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
-                                                        <a href="his_admin_upate_single_pres.php?pres_number=<?php echo $row->pres_number;?>" class="badge badge-warning"><i class="fas fa-eye-dropper "></i> Update</a>
-                                                        <a href="his_admin_manage_presc.php?delete_pres_number=<?php echo $row->pres_number;?>" class="badge badge-danger"><i class=" fas fa-trash-alt "></i> Delete</a>
+                                                        <a href="manage-payrolls.php?delete_pay_number=<?php echo $row->pay_number;?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete</a>
+                                                        <a href="his_admin_update_single_employee_payroll.php?pay_number=<?php echo $row->pay_number;?>" class="badge badge-success"><i class="fas fa-edit "></i>Update Payroll</a>
 
                                                     </td>
                                                 </tr>

@@ -88,7 +88,7 @@
                             <div class="card-body p-4">
                                 
                                 <div class="text-center w-75 m-auto">
-                                    <a href="his_admin_register.php">
+                                    <a href="register.php">
                                         <span><img src="assets/images/logo-dark.png" alt="" height="22"></span>
                                     </a>
                                     <p class="text-muted mb-4 mt-3">Don't have an account? Create your account, it takes less than a minute</p>

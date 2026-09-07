@@ -4,10 +4,10 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
-  if(isset($_GET['delete_account']))
+  if(isset($_GET['delete_eqp']))
   {
-        $id=intval($_GET['delete_account']);
-        $adn="delete from his_accounts where acc_number=?";
+        $id=intval($_GET['delete_eqp']);
+        $adn="delete from his_equipments where eqp_code=?";
         $stmt= $mysqli->prepare($adn);
         $stmt->bind_param('i',$id);
         $stmt->execute();
@@ -15,7 +15,7 @@
   
           if($stmt)
           {
-            $success = "Payable Account Records Deleted";
+            $success = "Equipment Deleted";
           }
             else
             {
@@ -59,11 +59,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Accounts</a></li>
-                                            <li class="breadcrumb-item active">Manage Payable Accounts</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
+                                            <li class="breadcrumb-item active">Manage Laboratory Equipment</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Payable Accounts</h4>
+                                    <h4 class="page-title">Manage Laboratory Equipments</h4>
                                 </div>
                             </div>
                         </div>     
@@ -96,15 +96,20 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Account Name</th>
-                                                <th data-hide="phone">Account Number</th>
-                                                <th data-hide="phone">Account Amount</th>
+                                                <th data-toggle="true">Name</th>
+                                                <th data-hide="phone">Vendor</th>
+                                                <th data-hide="phone">Barcode</th>
+                                                <th data-hide="phone">Status</th>
+                                                <th data-hide="phone">Quantity</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
                                             <?php
-                                            
-                                                $ret="SELECT * FROM  his_accounts WHERE acc_type = 'Payable Account' ORDER BY RAND() "; 
+                                            /*
+                                                *get details of allpatients
+                                                *
+                                            */
+                                                $ret="SELECT * FROM  his_equipments WHERE eqp_dept = 'Laboratory' ORDER BY RAND() "; 
                                                 $stmt= $mysqli->prepare($ret) ;
                                                 $stmt->execute() ;//ok
                                                 $res=$stmt->get_result();
@@ -116,14 +121,15 @@
                                                 <tbody>
                                                 <tr>
                                                     <td><?php echo $cnt;?></td>
-                                                    <td><?php echo $row->acc_name;?></td>
-                                                    <td><?php echo $row->acc_number;?></td>
-                                                    <td>$ <?php echo $row->acc_amount;?></td>
-
+                                                    <td><?php echo $row->eqp_name;?></td>
+                                                    <td><?php echo $row->eqp_vendor;?></td>
+                                                    <td><?php echo $row->eqp_code;?></td>
+                                                    <td><?php echo $row->eqp_status;?></td>
+                                                    <td><?php echo $row->eqp_qty;?></td>
                                                     <td>
-                                                        <a href="his_admin_view_single_payable_account.php?acc_number=<?php echo $row->acc_number;?>" class="badge badge-success"><i class="fas fa-eye "></i> View</a>
-                                                        <a href="his_admin_update_single_payable_account.php?acc_number=<?php echo $row->acc_number;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
-                                                        <a href="his_admin_manage_acc_payable.php?delete_account=<?php echo $row->acc_number;?>" class="badge badge-danger"><i class="fas fa-trash-alt "></i> Delete</a>
+                                                        <a href="his_admin_view_single_eqp.php?eqp_code=<?php echo $row->eqp_code;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
+                                                        <a href="his_admin_update_single_eqp.php?eqp_code=<?php echo $row->eqp_code;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
+                                                        <a href="manage-lab-equipment.php?delete_eqp=<?php echo $row->eqp_code;?>" class="badge badge-danger"><i class="fas fa-trash-alt "></i> Delete</a>
 
 
                                                     </td>

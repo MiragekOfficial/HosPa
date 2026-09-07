@@ -4,10 +4,10 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
-  if(isset($_GET['delete_mdr_number']))
+  if(isset($_GET['delete_pharm_name']))
   {
-        $id=intval($_GET['delete_mdr_number']);
-        $adn="DELETE FROM his_medical_records WHERE  mdr_number = ?";
+        $id=intval($_GET['delete_pharm_name']);
+        $adn="delete from his_pharmaceuticals where phar_id=?";
         $stmt= $mysqli->prepare($adn);
         $stmt->bind_param('i',$id);
         $stmt->execute();
@@ -15,7 +15,7 @@
   
           if($stmt)
           {
-            $success = "Medical Records Deleted";
+            $success = "Pharmaceutical Records Deleted";
           }
             else
             {
@@ -59,11 +59,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Medical Records</a></li>
-                                            <li class="breadcrumb-item active">Manage Medical Records</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pharmaceuticals</a></li>
+                                            <li class="breadcrumb-item active">Manage Pharmaceuticals</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Medical Records</h4>
+                                    <h4 class="page-title">Manage Pharmaceuticals </h4>
                                 </div>
                             </div>
                         </div>     
@@ -96,11 +96,11 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Address</th>
-                                                <th data-hide="phone">Ailment</th>
-                                                <th data-hide="phone">Age</th>
+                                                <th data-toggle="true"> Name</th>
+                                                <th data-hide="phone">Barcode</th>
+                                                <th data-hide="phone">Vendor</th>
+                                                <th data-hide="phone">Category</th>
+                                                <th data-hide="phone">Quantity</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -109,8 +109,7 @@
                                                 *get details of allpatients
                                                 *
                                             */
-                                                $ret="SELECT * FROM  his_medical_records ORDER BY RAND() "; 
-                                                //sql code to get to ten docs  randomly
+                                                $ret="SELECT * FROM  his_pharmaceuticals ORDER BY RAND() "; 
                                                 $stmt= $mysqli->prepare($ret) ;
                                                 $stmt->execute() ;//ok
                                                 $res=$stmt->get_result();
@@ -122,15 +121,15 @@
                                                 <tbody>
                                                 <tr>
                                                     <td><?php echo $cnt;?></td>
-                                                    <td><?php echo $row->mdr_pat_name;?></td>
-                                                    <td><?php echo $row->mdr_pat_number;?></td>
-                                                    <td><?php echo $row->mdr_pat_adr;?></td>
-                                                    <td><?php echo $row->mdr_pat_ailment;?></td>
-                                                    <td><?php echo $row->mdr_pat_age;?> Years</td>
+                                                    <td><?php echo $row->phar_name;?></td>
+                                                    <td><?php echo $row->phar_bcode;?></td>
+                                                    <td><?php echo $row->phar_vendor;?></td>
+                                                    <td><?php echo $row->phar_cat;?></td>
+                                                    <td><?php echo $row->phar_qty;?> Cartons</td>
                                                     <td>
-                                                        <a href="his_admin_view_single_medical_record.php?mdr_id=<?php echo $row->mdr_id;?>&&mdr_number=<?php echo $row->mdr_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
-                                                        <a href="his_admin_upate_single_medical_record.php?mdr_number=<?php echo $row->mdr_number;?>" class="badge badge-warning"><i class="fas fa-eye-dropper "></i> Update</a>
-                                                        <a href="his_admin_manage_medical_record.php?delete_mdr_number=<?php echo $row->mdr_number;?>" class="badge badge-danger"><i class=" fas fa-trash-alt "></i> Delete</a>
+                                                        <a href="his_admin_view_single_pharm.php?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
+                                                        <a href="his_admin_update_single_pharm.php?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
+                                                        <a href="manage-pharmaceuticals.php?delete_pharm_name=<?php echo $row->phar_id;?>" class="badge badge-danger"><i class="fas fa-trash-alt"></i> Delete</a>
 
                                                     </td>
                                                 </tr>

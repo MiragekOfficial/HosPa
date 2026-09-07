@@ -4,10 +4,10 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
-  if(isset($_GET['delete_pharm_name']))
+  if(isset($_GET['delete']))
   {
-        $id=intval($_GET['delete_pharm_name']);
-        $adn="delete from his_pharmaceuticals where phar_id=?";
+        $id=intval($_GET['delete']);
+        $adn="delete from his_patients where pat_id=?";
         $stmt= $mysqli->prepare($adn);
         $stmt->bind_param('i',$id);
         $stmt->execute();
@@ -15,7 +15,7 @@
   
           if($stmt)
           {
-            $success = "Pharmaceutical Records Deleted";
+            $success = "Patients Records Deleted";
           }
             else
             {
@@ -59,11 +59,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pharmaceuticals</a></li>
-                                            <li class="breadcrumb-item active">Manage Pharmaceuticals</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
+                                            <li class="breadcrumb-item active">Manage Patients</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Pharmaceuticals </h4>
+                                    <h4 class="page-title">Manage Patient Details</h4>
                                 </div>
                             </div>
                         </div>     
@@ -96,11 +96,10 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true"> Name</th>
-                                                <th data-hide="phone">Barcode</th>
-                                                <th data-hide="phone">Vendor</th>
+                                                <th data-toggle="true">Patient</th>
+                                                <th data-hide="phone">Number</th>
+                                                <th data-hide="phone">Address</th>
                                                 <th data-hide="phone">Category</th>
-                                                <th data-hide="phone">Quantity</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -109,7 +108,8 @@
                                                 *get details of allpatients
                                                 *
                                             */
-                                                $ret="SELECT * FROM  his_pharmaceuticals ORDER BY RAND() "; 
+                                                $ret="SELECT * FROM  his_patients ORDER BY RAND() "; 
+                                                //sql code to get to ten docs  randomly
                                                 $stmt= $mysqli->prepare($ret) ;
                                                 $stmt->execute() ;//ok
                                                 $res=$stmt->get_result();
@@ -121,16 +121,15 @@
                                                 <tbody>
                                                 <tr>
                                                     <td><?php echo $cnt;?></td>
-                                                    <td><?php echo $row->phar_name;?></td>
-                                                    <td><?php echo $row->phar_bcode;?></td>
-                                                    <td><?php echo $row->phar_vendor;?></td>
-                                                    <td><?php echo $row->phar_cat;?></td>
-                                                    <td><?php echo $row->phar_qty;?> Cartons</td>
+                                                    <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
+                                                    <td><?php echo $row->pat_number;?></td>
+                                                    <td><?php echo $row->pat_addr;?></td>
+                                                    <td><?php echo $row->pat_type;?></td>
+                                                    
                                                     <td>
-                                                        <a href="his_admin_view_single_pharm.php?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
-                                                        <a href="his_admin_update_single_pharm.php?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
-                                                        <a href="his_admin_manage_pharmaceuticals.php?delete_pharm_name=<?php echo $row->phar_id;?>" class="badge badge-danger"><i class="fas fa-trash-alt"></i> Delete</a>
-
+                                                        <a href="manage-patient.php?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>
+                                                        <a href="his_admin_view_single_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="his_admin_update_single_patient.php?pat_id=<?php echo $row->pat_id;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Update</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

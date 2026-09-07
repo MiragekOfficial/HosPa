@@ -4,10 +4,10 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
-  if(isset($_GET['delete']))
+  if(isset($_GET['delete_vendor_number']))
   {
-        $id=intval($_GET['delete']);
-        $adn="delete from his_patients where pat_id=?";
+        $id=intval($_GET['delete_vendor_number']);
+        $adn="delete from his_vendor where v_number=?";
         $stmt= $mysqli->prepare($adn);
         $stmt->bind_param('i',$id);
         $stmt->execute();
@@ -15,7 +15,7 @@
   
           if($stmt)
           {
-            $success = "Patients Records Deleted";
+            $success = "Vendor Records Deleted";
           }
             else
             {
@@ -59,11 +59,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">Manage Patients</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Vendor</a></li>
+                                            <li class="breadcrumb-item active">Manage Vendors</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Patient Details</h4>
+                                    <h4 class="page-title">Manage Vendors</h4>
                                 </div>
                             </div>
                         </div>     
@@ -96,10 +96,9 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient</th>
-                                                <th data-hide="phone">Number</th>
-                                                <th data-hide="phone">Address</th>
-                                                <th data-hide="phone">Category</th>
+                                                <th data-toggle="true">Vendor Name</th>
+                                                <th data-hide="phone">Vendor Number</th>
+                                                <th data-hide="phone">Vendro Email</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -108,7 +107,7 @@
                                                 *get details of allpatients
                                                 *
                                             */
-                                                $ret="SELECT * FROM  his_patients ORDER BY RAND() "; 
+                                                $ret="SELECT * FROM  his_vendor ORDER BY RAND() "; 
                                                 //sql code to get to ten docs  randomly
                                                 $stmt= $mysqli->prepare($ret) ;
                                                 $stmt->execute() ;//ok
@@ -116,20 +115,21 @@
                                                 $cnt=1;
                                                 while($row=$res->fetch_object())
                                                 {
+                                                    //$mysqlDateTime = $row->s_pat_date;
                                             ?>
 
                                                 <tbody>
                                                 <tr>
                                                     <td><?php echo $cnt;?></td>
-                                                    <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
-                                                    <td><?php echo $row->pat_number;?></td>
-                                                    <td><?php echo $row->pat_addr;?></td>
-                                                    <td><?php echo $row->pat_type;?></td>
+                                                    <td><?php echo $row->v_name;?></td>
+                                                    <td><?php echo $row->v_number;?></td>
+                                                    <td><?php echo $row->v_email;?></td>
+
                                                     
                                                     <td>
-                                                        <a href="his_admin_manage_patient.php?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>
-                                                        <a href="his_admin_view_single_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
-                                                        <a href="his_admin_update_single_patient.php?pat_id=<?php echo $row->pat_id;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Update</a>
+                                                        <a href="his_admin_view_single_vendor.php?v_number=<?php echo $row->v_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
+                                                        <a href="his_admin_update_single_vendor.php?v_number=<?php echo $row->v_number;?>" class="badge badge-success"><i class="fas fa-edit"></i> Update</a>
+                                                        <a href="manage-vendor.php?delete_vendor_number=<?php echo $row->v_number?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete Record</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

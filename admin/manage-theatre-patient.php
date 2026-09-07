@@ -132,7 +132,7 @@
                                                     
                                                     <td>
                                                         <a href="his_admin_update_single_patient_surgery.php?s_number=<?php echo $row->s_number;?>" class="badge badge-success"><i class="fas fa-edit"></i> Update</a>
-                                                        <a href="his_admin_manage_theatre_patient.php?delete_s_number=<?php echo $row->s_number?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete Record</a>
+                                                        <a href="manage-theatre-patient.php?delete_s_number=<?php echo $row->s_number?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete Record</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

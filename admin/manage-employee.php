@@ -4,10 +4,10 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
-  if(isset($_GET['delete_pharm_cat']))
+  if(isset($_GET['delete']))
   {
-        $id=intval($_GET['delete_pharm_cat']);
-        $adn="delete from his_pharmaceuticals_categories where pharm_cat_id=?";
+        $id=intval($_GET['delete']);
+        $adn="delete from his_docs where doc_id=?";
         $stmt= $mysqli->prepare($adn);
         $stmt->bind_param('i',$id);
         $stmt->execute();
@@ -15,7 +15,7 @@
   
           if($stmt)
           {
-            $success = "Pharmaceutical Category Records Deleted";
+            $success = "Employee Fired";
           }
             else
             {
@@ -59,11 +59,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pharmaceuticals</a></li>
-                                            <li class="breadcrumb-item active">Manage Pharmaceutical Category</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Employee</a></li>
+                                            <li class="breadcrumb-item active">Manage Employees</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Pharmaceutical Categories</h4>
+                                    <h4 class="page-title">Manage Employees Details</h4>
                                 </div>
                             </div>
                         </div>     
@@ -96,8 +96,10 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Category Name</th>
-                                                <th data-hide="phone">Category Vendor</th>
+                                                <th data-toggle="true">Name</th>
+                                                <th data-hide="phone">Number</th>
+                                                <th data-hide="phone">Department</th>
+                                                <th data-hide="phone">Email</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -106,7 +108,8 @@
                                                 *get details of allpatients
                                                 *
                                             */
-                                                $ret="SELECT * FROM  his_pharmaceuticals_categories ORDER BY RAND() "; 
+                                                $ret="SELECT * FROM  his_docs ORDER BY RAND() "; 
+                                                //sql code to get to ten docs  randomly
                                                 $stmt= $mysqli->prepare($ret) ;
                                                 $stmt->execute() ;//ok
                                                 $res=$stmt->get_result();
@@ -118,14 +121,15 @@
                                                 <tbody>
                                                 <tr>
                                                     <td><?php echo $cnt;?></td>
-                                                    <td><?php echo $row->pharm_cat_name;?></td>
-                                                    <td><?php echo $row->pharm_cat_vendor;?></td>
+                                                    <td><?php echo $row->doc_fname;?> <?php echo $row->doc_lname;?></td>
+                                                    <td><?php echo $row->doc_number;?></td>
+                                                    <td><?php echo $row->doc_dept;?></td>
+                                                    <td><?php echo $row->doc_email;?></td>
+                                                    
                                                     <td>
-                                                        <a href="his_admin_view_single_pharm_category.php?pharm_cat_id=<?php echo $row->pharm_cat_id;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
-                                                        <a href="his_admin_update_single_pharm_category.php?pharm_cat_name=<?php echo $row->pharm_cat_name;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
-                                                        <a href="his_admin_manage_pharm_cat.php?delete_pharm_cat=<?php echo $row->pharm_cat_id;?>" class="badge badge-danger"><i class="fas fa-trash-alt "></i> Delete</a>
-
-
+                                                        <a href="manage-employee.php?delete=<?php echo $row->doc_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>
+                                                        <a href="his_admin_view_single_employee.php?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="his_admin_update_single_employee.php?doc_number=<?php echo $row->doc_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Update</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

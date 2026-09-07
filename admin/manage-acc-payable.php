@@ -4,10 +4,10 @@
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
-  if(isset($_GET['delete_vendor_number']))
+  if(isset($_GET['delete_account']))
   {
-        $id=intval($_GET['delete_vendor_number']);
-        $adn="delete from his_vendor where v_number=?";
+        $id=intval($_GET['delete_account']);
+        $adn="delete from his_accounts where acc_number=?";
         $stmt= $mysqli->prepare($adn);
         $stmt->bind_param('i',$id);
         $stmt->execute();
@@ -15,7 +15,7 @@
   
           if($stmt)
           {
-            $success = "Vendor Records Deleted";
+            $success = "Payable Account Records Deleted";
           }
             else
             {
@@ -59,11 +59,11 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Vendor</a></li>
-                                            <li class="breadcrumb-item active">Manage Vendors</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Accounts</a></li>
+                                            <li class="breadcrumb-item active">Manage Payable Accounts</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Vendors</h4>
+                                    <h4 class="page-title">Manage Payable Accounts</h4>
                                 </div>
                             </div>
                         </div>     
@@ -96,40 +96,36 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Vendor Name</th>
-                                                <th data-hide="phone">Vendor Number</th>
-                                                <th data-hide="phone">Vendro Email</th>
+                                                <th data-toggle="true">Account Name</th>
+                                                <th data-hide="phone">Account Number</th>
+                                                <th data-hide="phone">Account Amount</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
                                             <?php
-                                            /*
-                                                *get details of allpatients
-                                                *
-                                            */
-                                                $ret="SELECT * FROM  his_vendor ORDER BY RAND() "; 
-                                                //sql code to get to ten docs  randomly
+                                            
+                                                $ret="SELECT * FROM  his_accounts WHERE acc_type = 'Payable Account' ORDER BY RAND() "; 
                                                 $stmt= $mysqli->prepare($ret) ;
                                                 $stmt->execute() ;//ok
                                                 $res=$stmt->get_result();
                                                 $cnt=1;
                                                 while($row=$res->fetch_object())
                                                 {
-                                                    //$mysqlDateTime = $row->s_pat_date;
                                             ?>
 
                                                 <tbody>
                                                 <tr>
                                                     <td><?php echo $cnt;?></td>
-                                                    <td><?php echo $row->v_name;?></td>
-                                                    <td><?php echo $row->v_number;?></td>
-                                                    <td><?php echo $row->v_email;?></td>
+                                                    <td><?php echo $row->acc_name;?></td>
+                                                    <td><?php echo $row->acc_number;?></td>
+                                                    <td>$ <?php echo $row->acc_amount;?></td>
 
-                                                    
                                                     <td>
-                                                        <a href="his_admin_view_single_vendor.php?v_number=<?php echo $row->v_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
-                                                        <a href="his_admin_update_single_vendor.php?v_number=<?php echo $row->v_number;?>" class="badge badge-success"><i class="fas fa-edit"></i> Update</a>
-                                                        <a href="his_admin_manage_vendor.php?delete_vendor_number=<?php echo $row->v_number?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete Record</a>
+                                                        <a href="his_admin_view_single_payable_account.php?acc_number=<?php echo $row->acc_number;?>" class="badge badge-success"><i class="fas fa-eye "></i> View</a>
+                                                        <a href="his_admin_update_single_payable_account.php?acc_number=<?php echo $row->acc_number;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
+                                                        <a href="manage-acc-payable.php?delete_account=<?php echo $row->acc_number;?>" class="badge badge-danger"><i class="fas fa-trash-alt "></i> Delete</a>
+
+
                                                     </td>
                                                 </tr>
                                                 </tbody>
