@@ -110,7 +110,7 @@ Follow these steps to get HosPa running on your local machine or live server:
 ## Important Notes
 
 - **PHP Compatibility:** This project requires **PHP 7.4 or higher**. It is fully tested on PHP 8.x. Using outdated PHP versions (below 5.6) will cause errors.
-- **Official Sources:** Download the latest version from this official GitHub repository or the [EqualFaith Sales](https://equalfaith.org/sales/hospa) page.
+- **Official Sources:** Download the latest version from this official GitHub repository or the [EqualFaith Sales](https://equalfaith.org/sales/products) page.
 - **Support:** For issues or contributions, please refer to the project's issue tracker or contact us from EqualFaith contact page. 
 
 ---
