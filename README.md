@@ -1,90 +1,124 @@
-https://codeastro.com/hospital-management-system-in-php-with-source-code-adv/amp/
+# HosPa - Hospital Management System
 
-A fully functional project based on Online Hospital Management System Project which uses PHP Language with MySQL Database. The following PHP project contains all the essential features which can be in use by second-year IT students for their college projects. It has a number of features that will allow users to manage all the medical records and reports. This web application’s concept is all clear. It’s the same as real-life scenarios and well-implemented on it. To download free Hospital Management System Project in PHP MySQL with source code files, please scroll down to the bottom of this post for the Download button.
+**HosPa** is a free, open-source, web-based Hospital Management System built with PHP, MySQL, and Bootstrap. Originally forked from the [Hospital Management System](https://codeastro.com/hospital-management-system-in-php-with-source-code-adv) by Martin Mbithi Nzilani, it is now actively maintained and enhanced by [Miragek](https://miragek.com) starting from version 2.0. For a complete history of changes, please review the `CHANGELOG.md` file.
 
-📌Project Maintenance Update (2026)
-1. Originally developed using PHP & MySQL.
-2. Works with most modern PHP/MySQL setups; minor adjustments may be needed in rare cases.
-3. Shared for learning, experimentation, and educational purposes.
+NOTE: NOT AVAILABLE FOR PUBLIC USE YET. STILL VERY BUGGY AND UNDERGOING V2. WE WILL REMOVE THIS WARNING ONCE THE PROJECT IS FINISHED.
 
-About Hospital Management System PHP Project
-In particular, this Hospital Management System Project in PHP focuses mainly on managing medical-related records within the hospital. To be more precise, the system helps to keep track of medical reports. Also, the system displays all the available employees and patients. In addition, the system allows adding up inventories, and pharmacy records too(codeastro.com). Evidently, this project contains an admin panel with an employee/doctor panel. In an overview of this web application, a doctor can simply log into the system using his/her doctor id and password. He/she can manage patients, pharmacy, and laboratory records. Additionally, the employee/doctor can view and manage inventories too. With it, the system also allows the user to view detailed information and reports of each patient. Besides, the users can update their profiles too.
+---
 
-Admin Panel
-An admin has full control over the system. He/she can manage patients, employees, accounting, and so on. Here, each and every section has its own respective details such as name, and other important details. Here, an admin can add patient records directly by filling up the required forms. During the patient registration, an admin has to provide details such as name, address, contact, age with patient type, and ailment. With it, the administrator can also manage staff members for the system(codeastro.com). For adding an employee/doctor, the user has to provide names and set up login credentials. Here, each and every employee will have their own unique id. Which is automatically created by the system during the registration process. Talking about the patient management section, the system users can also manage patient transfer and discharge records.
+## Purpose
 
-Employee Management
-As mentioned earlier, the administrator can add a number of employee/doctor records with their own login credentials. Besides, there are certain features that need to be discussed in this section. Here is the list of features and rules that are worth mentioning under this section. Each employee member needs to fall under a certain department. In short, the admin must assign departments to each employee member after their registration process. By default, it’s set to none. With it, there’s also another feature that’ll let the user change their department [if needed]. In order to change a department, the admin has to proceed through the transfer employee phase. There the system allows an admin to change the department from a current one to a new one (codeastro.com). Some of the available departments are Pharmacy, Accounting, Surgery, and more. FYI, the selection of the Surgery department assigns an employee as a doctor.
+HosPa is designed to provide a complete, real-world solution for managing day-to-day hospital operations. It serves as an excellent learning resource for IT students, a solid foundation for developers building healthcare applications, and a functional tool for small to medium-sized healthcare facilities. The system handles everything from patient records and staff management to pharmacy inventory, accounting, and surgical scheduling.
 
-Pharmacy Management
-When it comes to projects such as the Hospital system, it’s a must that it should contain a section to cover pharmacy records too. And there is one. For this online hospital management system project, the administrator can manage pharmacy records easily. Not just with ease, but also it helps to cover up all the important and required information for the system. The administrator has to add the pharmaceutical category first before anything. Then, the admin can provide a number of pharmacy records. For that, the user has to provide details such as name, quantity, category, vendor, barcode, and description. Here, each and every medicine item will have its own unique barcode(codeastro.com). Which is automatically created by the system while inserting a new record. Besides, the administrator can update and delete these items as well as categories. And the same access level goes for the employee members too.
+---
 
-Besides adding up medicine records and categories, the admin can also simply add and manage prescriptions for each patient. For this, the admin has to select any from the available patient list and type it into the list of prescriptions. In fact, this portion is mostly handled or mostly meant to be handled by the staff members. But still, the admin has a high ground on any of these sections as well as the system. Also, all the prescriptions can be updated and removed anytime by employee members too.
+## System Overview
 
-Accounting Section and Inventory Management
-Moreover, an admin only has the access to manage the accounting system for the hospital(codeastro.com). Under the accounting section, it includes payable and receivable accounts. In order to add a payable account, an admin has to provide the account name and amount with a description. And the same process goes in terms of receivable accounts too. Managing these sections helps the system administrator to check up on their pending accounts and the flow of transactions. Moving toward the other side, Inventory management consists of two sections. One is pharmaceuticals and the other one is assets. The Pharmaceuticals section lists all the available medical records whereas the assets section lists the hospital’s assets. In fact, the assets can only be managed by the system administrator. The assets records contain details such as equipment name, code, vendor, department, and quantity.
+The application features two primary user interfaces: an **Admin Panel** with full system control, and an **Employee/Doctor Panel** with role-based access to essential daily tasks. All data is centralized in a MySQL database, with a responsive frontend powered by Bootstrap.
 
-Reporting and Medical Records
-Talking about the reporting section contains all the overall records of the system. Such as InPatient records, OutPatient records, as well as records of employees, pharmacy, accounting, and medical. And all these sections have already been discussed above with the proper heading for each. So, moving on to the next section is related to medical records. This one’s a simple feature that has also been discussed earlier under a different topic. Which in fact is going to be repeated once again for your kind information. Remember the prescription management section? (codeastro.com) Yes, and that exactly falls under this medical records section too. As the administrator can manage a tip of medical records by providing prescriptions. This is not just only thing that falls under medical records, there are other things too that’ll be discussed in the next paragraph.
+### Core Workflows
 
-Laboratory Section
-The laboratory section is where all the important patient’s medical records and held and managed. Under the laboratory section, the administrator can add and manage patients’ lab tests. Following it, the user can also add and manage (codeastro.com) the patient as well as the employee’s vitals. In order to capture the user’s vitals, the admin has to provide details such as body temperature in Celcius, heart pulse/beat bpm, respiratory rate bpm, and blood pressure mmHg. An admin can view lab results and reports for each available patient. In fact, all these reports are set under each employee and patient’s profile under their respective tabs. Which can be viewed anytime by the users. Besides, the system administrator can also manage lab equipment. FYI, lab equipment is directly connected to assets management.
+- **Patient Lifecycle:** Registration → Treatment → Prescription → Lab Tests → Transfer or Discharge.
+- **Staff Management:** Employee registration → Department assignment → Payroll processing.
+- **Pharmacy & Inventory:** Medicine categorization → Stock management → Prescription fulfillment.
+- **Financial Tracking:** Manage payable/receivable accounts and generate payroll.
+- **Reporting:** Access comprehensive records for patients, staff, pharmacy, accounting, and medical history.
 
-Surgical Theatre Section
-Similarly, this section also helps in the management of assets by allowing the administrator to add and manage required equipment. The next section is related to surgery records and patients. This particular section holds up a patient’s record that requires surgery. For this, the admin has to manually select and add patients to it. Adding a patient to a surgery list is very simple(codeastro.com). All you have to do is select the name of the available surgeon and that’s it. By default, the surgery status is set to ongoing which can later be changed through the manage section. The users can view surgery records which display information that includes the patient’s name, number, ailment, surgery date, name of the surgeon, and status.
+---
 
-Payroll Management and Vendors
-On one hand, this project also includes a payroll management system for the employee members. The rules out here are pretty simple or might be kind of tricky for some, but still effective in ways. The very first step of payroll management is to add payroll details. Meaning, the admin has to select any of the available employees and provide salary details. Speaking of salary details refers to salary amount and description. Completion of this process means the employee is eligible for the payroll process. And here comes the interesting one. The second step or the final one is to generate payroll (codeastro.com). In fact, everything is auto-generated by the system after adding up payroll details. The user just has to click on generate payroll button and view the payroll receipt. Also, the user can print out the payroll receipt.
+## Key Features (At a Glance)
 
-Talking about the Vendors section, the administrator can add and manage vendors. For adding a vendor’s information, the user has to provide certain details. That includes the name of the vendor along with the vendor’s address, number, email, and other details. This particular section is directly connected with the pharmacy section while adding medicine records and categories.
+### Admin Panel
+- **Patient Management:** Add, transfer, and discharge patients with complete medical history.
+- **Employee Management:** Add staff, assign departments (Pharmacy, Accounting, Surgery, etc.), and manage transfers. Employees assigned to Surgery are designated as doctors.
+- **Pharmacy & Prescriptions:** Manage medicine categories, inventory, vendors, and patient prescriptions. Each medicine gets a unique barcode.
+- **Accounting:** Handle payable and receivable accounts with descriptions and amounts.
+- **Inventory & Assets:** Track pharmaceuticals and hospital equipment (name, code, vendor, department, quantity).
+- **Laboratory:** Add and manage patient lab tests, vitals (temperature, heart rate, respiratory rate, blood pressure), and view lab results/reports.
+- **Surgical Theatre:** Add patients to surgery lists, assign surgeons, manage equipment, and track surgery status (ongoing/completed).
+- **Payroll:** Add salary details, generate payroll receipts, and print them.
+- **Vendors:** Manage vendor information (name, address, contact, email).
+- **Reporting:** Generate detailed reports for InPatients, OutPatients, employees, pharmacy, accounting, and medical records.
 
-Doctor’s Panel
-On the other hand, the user has full access level regarding the patient’s section. And just like that, the user can also manage pharmacy records as well as inventories and laboratory reports. Even though the features are a bit limited to the employee/doctors, the selected ones are important that plays a vital role in maintaining the system. Not to get confused by the term employee management with a doctor as both of them are kind of the same for the system. The only thing that differentiates them is their assigned department. The other department’s employees as well as doctors can capture and set vitals and other lab reports of the patient (codeastro.com). Besides all of these, the employee members can view their respective payroll reports from the payroll section. Additionally, the payroll receipt contains tax information and extra notes too.
+### Employee/Doctor Panel
+- **Patient Care:** Manage patient records, create and update prescriptions, and capture vitals/lab results.
+- **Pharmacy & Inventory Access:** View and manage medicine and inventory records (limited to assigned modules).
+- **Personal Management:** View and update profile information.
+- **Payroll:** View and print personal payroll receipts.
 
-In addition to it, the employees can also view their profiles and update them. Last but not least, a clean and simple dashboard is presented with various color combinations for a greater user experience while using this Online Hospital Management System Project in PHP MySQL. For its UI elements, a free open-source CSS framework; Bootstrap is on board with some Vanilla CSS too. Presenting a new Hospital Management System Project in PHP MySQL which includes an admin panel with an employee panel. That too contains all the essential features to follow up and is a knowledgeable resource for learning purposes.
+### Additional Highlights
+- **Role-Based Access Control:** Ensures data security and proper permissions for each user type.
+- **Responsive User Interface:** Works seamlessly on desktops, tablets, and mobile devices.
+- **Intuitive Dashboard:** Clean, color-coded interface for easy navigation and quick access to key modules.
+- **Modern Tech Stack:** PHP 7.4+ (tested on PHP 8.x), MySQL, and Bootstrap.
 
-Available Features:
-Admin Panel
-Employee Panel
-Patient Management
-Transfer, Discharge Patient
-Employee Management
-Assign Departments
-Transfer Employees
-Medicine Management
-Prescriptions
-Accounting – Payable and Receivable
-Inventory Management
-Assets Management
-In and Out Patient Records
-Medical Records
-Patient Lab Test and Results
-Manage Patient’s Vitals
-Lab Reports
-Surgery Records
-Surgery Equipment Records
-Patient Medical Profile
-Payroll Management
-Print Payroll Receipt
-Manage Vendors
-Project Name:	Hospital Management System
-Language/s Used:	PHP
-PHP version (Recommended):	5.6, 7.4
-Database:	MySQL
-Type:	Web Application
-Developer:	Martin Mbithi Nzilani
-Updates:	0
- 
-Online Hospital Management System PHP Project Overview
+---
 
-Instructions: How to Run?
-After you finish downloading the project, unzip the project file and head over to your XAMPP directory.
-There you’ll find a folder named “htdocs”.
-Inside the “htdocs” folder, paste the project folder (not the .zip one, but the extracted one).
-Open your favorite browser; we recommend using Google Chrome or Mozilla Firefox.
-Then, go to the URL “http://localhost/phpmyadmin“.
-Create a Database with a name that is provided inside the “01 LOGIN DETAILS & PROJECT INFO.txt”.
-Click on the “Import” tab and choose the database file (.sql) which is provided under the folder named “DATABASE FILE”.
-After setting up all these, go to the URL “http://localhost/[ PROJECT_FOLDER_NAME ]/“
-All the login details are provided inside the project folder, check that out and enter them in order to use it.
-And there you have it, a full setup of the Hospital Management System Project in PHP MySQL. For this particular PHP project, PHP Version 5.6, 7.4 is required because the project might not operate with the oldest PHP version. So, users with the oldest PHP version (older than 5.6) might face various problems while operating it. As a result, you’ll need to manage your PHP version (only if you’re using the old version) at the moment. Also, Download New Hospital Management System Project in PHP Source Code – codeastro.com. So, this hospital system PHP project is a simple project for all beginners that broads vast knowledge into such PHP web applications. In conclusion, this whole PHP project with free source code is an absolute project and a meaningful way for the users to learn and explore more about it.
+## Technology Stack
+
+| Component       | Technology                          |
+|-----------------|-------------------------------------|
+| **Backend**     | PHP (7.4+ / 8.x)                    |
+| **Database**    | MySQL                               |
+| **Frontend**    | Bootstrap, Vanilla CSS              |
+| **Type**        | Web Application                     |
+
+---
+
+## Installation Guide
+
+Follow these steps to get HosPa running on your local machine or live server:
+
+### Prerequisites
+- A web server (XAMPP, WAMP, or a live hosting environment).
+- PHP version 7.4 or higher.
+- MySQL database.
+
+### Step-by-Step Setup
+
+1.  **Download & Extract:**
+    Download the project zip file and extract its contents.
+
+2.  **Move to Server Directory:**
+    Copy the extracted folder to your server's root directory:
+    - **XAMPP:** `htdocs`
+    - **WAMP:** `www`
+    - **Live Server:** Public HTML folder.
+
+3.  **Create Database:**
+    - Open phpMyAdmin (e.g., `http://localhost/phpmyadmin`).
+    - Create a new database (e.g., `hospa_db`).
+
+4.  **Import Database Structure:**
+    - In phpMyAdmin, select your new database.
+    - Go to the **Import** tab.
+    - Choose the `.sql` file located in the `DATABASE FILE` folder of the project.
+    - Click **Go** to import the tables and sample data.
+
+5.  **Configure Application:**
+    - Open the `config.php` file in the project root.
+    - Update the following settings:
+        - Database credentials (host, username, password, database name).
+        - Website name and other custom configurations.
+
+6.  **Launch the Application:**
+    - Open your browser and go to `http://localhost/[PROJECT_FOLDER_NAME]/`.
+    - Use the login credentials provided in the `DATABASE FILE` folder to access the admin or employee panel.
+
+---
+
+## Important Notes
+
+- **PHP Compatibility:** This project requires **PHP 7.4 or higher**. It is fully tested on PHP 8.x. Using outdated PHP versions (below 5.6) will cause errors.
+- **Official Sources:** Download the latest version from this official GitHub repository or the [EqualFaith Sales](https://equalfaith.org/sales/hospa) page.
+- **Support:** For issues or contributions, please refer to the project's issue tracker or contact us from EqualFaith contact page. 
+
+---
+
+## Conclusion
+
+HosPa is a comprehensive, feature-rich Hospital Management System that bridges the gap between academic learning and real-world application development. With its modular architecture, clean codebase, and extensive feature set, it is an invaluable resource for students, developers, and healthcare organizations alike. Whether you're building a portfolio project, launching a startup, or managing a small clinic, HosPa provides a solid, scalable foundation.
+
+---
+
+**Start building your healthcare solution with HosPa today!**
