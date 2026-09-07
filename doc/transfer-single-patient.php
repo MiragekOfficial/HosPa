@@ -130,7 +130,7 @@ include '../config.php';
                                                 <input required="required" type="text" value="Success" class="form-control" name="t_status" id="inputAddress" placeholder="Patient's Addresss">
                                             </div>
 
-                                            <button type="submit" name="transfer_patient" class="ladda-button btn btn-success" data-style="expand-right">Transfer Patient</button>
+                                            <button type="submit" name="transfer_patient" class="ladda-button btn btn-success float-right" data-style="expand-right">Transfer Patient</button>
 
                                         </form>
                                         <!--End Patient Form-->

@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['trans_dept']))
 		{
             $doc_dept=$_POST['doc_dept'];
@@ -131,7 +135,7 @@
                                                     </select>
                                             </div>                                         
 
-                                            <button type="submit" name="trans_dept" class="ladda-button btn btn-success" data-style="expand-right">Transfer Employee</button>
+                                            <button type="submit" name="trans_dept" class="ladda-button btn btn-success float-right" data-style="expand-right">Transfer Employee</button>
 
                                         </form>
                                         <!--End Patient Form-->

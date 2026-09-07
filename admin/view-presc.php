@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -112,7 +116,7 @@
                                                     <td><?php echo $row->pres_pat_age;?> Years</td>
                                                     <td><?php echo $row->pres_pat_type;?></td>
                                                     
-                                                    <td><a href="view-single-pres.php?pres_number=<?php echo $row->pres_number;?>&&pres_id=<?php echo $row->pres_id;?>" class="badge badge-success"><i class="fas fa-eye"></i> View Prescription</a></td>
+                                                    <td><a href="view-single-pres?pres_number=<?php echo $row->pres_number;?>&&pres_id=<?php echo $row->pres_id;?>" class="badge badge-success"><i class="fas fa-eye"></i> View Prescription</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

@@ -1,6 +1,10 @@
 <?php
-	session_start();
-	include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['update_doc']))
 		{
             $email=$_GET['email'];
@@ -109,7 +113,7 @@
                                                 
                                             </div>                                            
 
-                                            <button type="submit" name="update_doc" class="ladda-button btn btn-success" data-style="expand-right">Update Password</button>
+                                            <button type="submit" name="update_doc" class="ladda-button btn btn-success float-right" data-style="expand-right">Update Password</button>
 
                                         </form>
                                         <!--End Patient Form-->

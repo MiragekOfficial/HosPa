@@ -135,9 +135,9 @@ include '../config.php';
                                                     <td><?php echo $row->pat_type;?></td>
                                                     
                                                     <td>
-                                                       <!-- <a href="manage-patient.php?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>-->
-                                                        <a href="view-single-patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
-                                                        <a href="update-single-patient.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Update</a>
+                                                       <!-- <a href="manage-patient?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>-->
+                                                        <a href="view-single-patient?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="update-single-patient?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Update</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

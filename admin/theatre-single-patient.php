@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+	if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['add_patient']))
 		{
             $s_pat_number = $_POST['s_pat_number'];
@@ -151,7 +155,7 @@
                                                 </div>
                                             </div>
 
-                                            <button type="submit" name="add_patient" class="ladda-button btn btn-success" data-style="expand-right">Add Patient</button>
+                                            <button type="submit" name="add_patient" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Patient</button>
 
                                         </form>
                                         <!--End Patient Form-->

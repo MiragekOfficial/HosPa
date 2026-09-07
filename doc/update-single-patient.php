@@ -103,7 +103,7 @@ include '../config.php';
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="header-title">Fill all fields</h4>
-                                        <!--Add Patient Form-->
+                                        <!-- Form-->
                                         <form method="post">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
@@ -152,7 +152,7 @@ include '../config.php';
                                                 
                                             </div>
 
-                                            <button type="submit" name="update_patient" class="ladda-button btn btn-success" data-style="expand-right">Add Patient</button>
+                                            <button type="submit" name="update_patient" class="ladda-button btn btn-success float-right" data-style="expand-right">Update Patient</button>
 
                                         </form>
                                         <!--End Patient Form-->

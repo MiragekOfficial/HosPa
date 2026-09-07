@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+	if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['update_payroll']))
 		{
 			$pay_number = $_GET['pay_number'];
@@ -144,7 +148,7 @@
                                                         <textarea   type="text" class="form-control" name="pay_descr" id="editor"> <?php echo $row->pay_descr;?></textarea>
                                                 </div>
 
-                                                <button type="submit" name="update_payroll" class="ladda-button btn btn-primary" data-style="expand-right">Update Payroll Record</button>
+                                                <button type="submit" name="update_payroll" class="ladda-button btn btn-primary float-right" data-style="expand-right">Update Payroll Record</button>
 
                                             </form>
                                             <!--End Patient Form-->

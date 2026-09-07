@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['add_vendor']))
 		{
 			$v_name=$_POST['v_name'];
@@ -121,7 +125,7 @@
                                                 <textarea  type="text" class="form-control" name="v_desc" id="editor"></textarea>
                                             </div>
 
-                                            <button type="submit" name="add_vendor" class="ladda-button btn btn-success" data-style="expand-right">Add Vendor</button>
+                                            <button type="submit" name="add_vendor" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Vendor</button>
 
                                         </form>
                                         <!--End Patient Form-->

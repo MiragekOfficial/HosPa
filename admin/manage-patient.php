@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -127,9 +131,9 @@
                                                     <td><?php echo $row->pat_type;?></td>
                                                     
                                                     <td>
-                                                        <a href="manage-patient.php?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>
-                                                        <a href="view-single-patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
-                                                        <a href="update-single-patient.php?pat_id=<?php echo $row->pat_id;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Update</a>
+                                                        <a href="manage-patient?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>
+                                                        <a href="view-single-patient?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="update-single-patient?pat_id=<?php echo $row->pat_id;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Update</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

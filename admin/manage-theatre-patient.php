@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+ if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -132,7 +136,7 @@
                                                     
                                                     <td>
                                                         <a href="update-single-patient-surgery.php?s_number=<?php echo $row->s_number;?>" class="badge badge-success"><i class="fas fa-edit"></i> Update</a>
-                                                        <a href="manage-theatre-patient.php?delete_s_number=<?php echo $row->s_number?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete Record</a>
+                                                        <a href="manage-theatre-patient?delete_s_number=<?php echo $row->s_number?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete Record</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

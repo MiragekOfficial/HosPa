@@ -139,7 +139,7 @@ include '../config.php';
                                                         <textarea required="required"   type="text" class="form-control" name="lab_pat_results" id="editor1"></textarea>
                                                 </div>
 
-                                                <button type="submit" name="add_patient_lab_result" class="ladda-button btn btn-success" data-style="expand-right">Add Laboratory Result</button>
+                                                <button type="submit" name="add_patient_lab_result" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Laboratory Result</button>
 
                                             </form>
                                             <!--End Patient Form-->

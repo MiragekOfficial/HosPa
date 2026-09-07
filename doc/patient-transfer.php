@@ -133,7 +133,7 @@ include '../config.php';
                                                     <td><?php echo $row->pat_type;?></td>
                                                     
                                                     <td>
-                                                        <a href="transfer-single-patient.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Transfer Patient</a>
+                                                        <a href="transfer-single-patient?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Transfer Patient</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

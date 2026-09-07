@@ -76,7 +76,7 @@ include '../config.php';
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">Add Patient</li>
+                                            <li class="breadcrumb-item active">Add A Patient</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Add Patient Details</h4>
@@ -90,7 +90,7 @@ include '../config.php';
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="header-title">Fill all fields</h4>
-                                        <!--Add Patient Form-->
+                                        <!--Form-->
                                         <form method="post">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
@@ -146,7 +146,9 @@ include '../config.php';
                                                 </div>
                                             </div>
 
-                                            <button type="submit" name="add_patient" class="ladda-button btn btn-primary" data-style="expand-right">Add Patient</button>
+                                            <div class="clearfix">
+
+                                            <button type="submit" name="add_patient" class="ladda-button btn btn-primary float-right" data-style="expand-right">Add Patient</button>
 
                                         </form>
                                         <!--End Patient Form-->

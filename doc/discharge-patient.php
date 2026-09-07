@@ -134,7 +134,7 @@ include '../config.php';
                                                     <td><?php echo $row->pat_type;?></td>
                                                     
                                                     <td>
-                                                        <a href="discharge-single-patient.php?pat_number=<?php echo $row->pat_id;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Discharge</a>
+                                                        <a href="discharge-single-patient?pat_number=<?php echo $row->pat_id;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Discharge</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

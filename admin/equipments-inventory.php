@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -109,7 +113,7 @@
                                                     <td><?php echo $row->eqp_dept;?></td>
                                                     <td><?php echo $row->eqp_qty;?></td>
                                                     <td>
-                                                        <a href="view-single-eqp.php?eqp_code=<?php echo $row->eqp_code;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
+                                                        <a href="view-single-eqp?eqp_code=<?php echo $row->eqp_code;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

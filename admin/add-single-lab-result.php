@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+	if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['add_patient_lab_result']))
 		{
 			$lab_pat_name = $_POST['lab_pat_name'];
@@ -135,7 +139,7 @@
                                                         <textarea required="required"   type="text" class="form-control" name="lab_pat_results" id="editor1"></textarea>
                                                 </div>
 
-                                                <button type="submit" name="add_patient_lab_result" class="ladda-button btn btn-success" data-style="expand-right">Add Laboratory Result</button>
+                                                <button type="submit" name="add_patient_lab_result" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Laboratory Result</button>
 
                                             </form>
                                             <!--End Patient Form-->

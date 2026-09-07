@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+	if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['update_patient_presc']))
 		{
 			$pres_pat_name = $_POST['pres_pat_name'];
@@ -136,7 +140,7 @@
                                                         <textarea required="required"  type="text" class="form-control" name="pres_ins" id="editor"><?php echo $row->pres_ins;?></textarea>
                                                 </div>
 
-                                                <button type="submit" name="update_patient_presc" class="ladda-button btn btn-primary" data-style="expand-right">Update Patient Prescription</button>
+                                                <button type="submit" name="update_patient_presc" class="ladda-button btn btn-primary float-right" data-style="expand-right">Update Patient Prescription</button>
 
                                             </form>
                                             <!--End Patient Form-->

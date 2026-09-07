@@ -1,7 +1,11 @@
 
 <?php
-	session_start();
-	include('assets/inc/config.php');
+	if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['add_pharmaceutical']))
 		{
 			$phar_name = $_POST['phar_name'];
@@ -150,7 +154,7 @@
                                                 <textarea required="required" type="text" class="form-control" name="phar_desc" id="editor"></textarea>
                                             </div>
 
-                                           <button type="submit" name="add_pharmaceutical" class="ladda-button btn btn-success" data-style="expand-right">Add Pharmaceutical</button>
+                                           <button type="submit" name="add_pharmaceutical" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Pharmaceutical</button>
 
                                         </form>
                                      

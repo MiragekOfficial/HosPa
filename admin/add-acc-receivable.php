@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['add_acc']))
 		{
 			$acc_name=$_POST['acc_name'];
@@ -117,7 +121,7 @@
                                                 <input required="required" value="Receivable Account" type="text" class="form-control" name="acc_type" id="inputAddress">
                                             </div>
 
-                                            <button type="submit" name="add_acc" class="ladda-button btn btn-success" data-style="expand-right">Add Account</button>
+                                            <button type="submit" name="add_acc" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Account</button>
 
                                         </form>
                                         <!--End Patient Form-->

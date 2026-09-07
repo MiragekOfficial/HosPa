@@ -159,7 +159,7 @@ include '../config.php';
                                                 </div>
                                             </div>
 
-                                            <button type="submit" name="discharge_patient" class="ladda-button btn btn-success" data-style="expand-right">Discharge</button>
+                                            <button type="submit" name="discharge_patient" class="ladda-button btn btn-success float-right" data-style="expand-right">Discharge</button>
 
                                         </form>
                                         <!--End Patient Form-->

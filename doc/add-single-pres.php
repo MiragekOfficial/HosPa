@@ -157,7 +157,7 @@ include '../config.php';
                                                         <textarea required="required"  type="text" class="form-control" name="pres_ins" id="editor"></textarea>
                                                 </div>
 
-                                                <button type="submit" name="add_patient_presc" class="ladda-button btn btn-primary" data-style="expand-right">Add Patient Prescription</button>
+                                                <button type="submit" name="add_patient_presc" class="ladda-button btn btn-primary float-right" data-style="expand-right">Add Patient Prescription</button>
 
                                             </form>
                                             <!--End Patient Form-->

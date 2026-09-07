@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -105,7 +109,7 @@
                                                     <td><?php echo $row->doc_fname;?> <?php echo $row->doc_lname;?></td>
                                                     <td><?php echo $row->doc_number;?></td>
                                                     <td><?php echo $row->doc_email;?></td>                                                    
-                                                    <td><a href="add-single-employee-vitals.php?doc_number=<?php echo $row->doc_number;?>" class="badge badge-success"><i class="fas fa-edit"></i> Capture Vitals</a></td>
+                                                    <td><a href="add-single-employee-vitals?doc_number=<?php echo $row->doc_number;?>" class="badge badge-success"><i class="fas fa-edit"></i> Capture Vitals</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

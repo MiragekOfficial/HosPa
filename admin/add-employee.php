@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Registration-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+	if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['add_doc']))
 		{
 			$doc_fname=$_POST['doc_fname'];
@@ -118,7 +122,7 @@
                                                 
                                             </div>
 
-                                            <button type="submit" name="add_doc" class="ladda-button btn btn-success" data-style="expand-right">Add Employee</button>
+                                            <button type="submit" name="add_doc" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Employee</button>
 
                                         </form>
                                         <!--End Patient Form-->

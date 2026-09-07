@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+ if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -110,7 +114,7 @@
                                                  
                                                     <td>
                                                         <a href="view-single-employee.php?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="badge badge-primary"><i class="mdi mdi-eye"></i> View</a>
-                                                        <a href="add-single-employee-payroll.php?doc_number=<?php echo $row->doc_number;?>" class="badge badge-success"><i class="fas fa-eye-dropper "></i> Add Payroll</a>
+                                                        <a href="add-single-employee-payroll?doc_number=<?php echo $row->doc_number;?>" class="badge badge-success"><i class="fas fa-eye-dropper "></i> Add Payroll</a>
 
                                                     </td>
                                                 </tr>

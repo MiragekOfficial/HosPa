@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -129,7 +133,7 @@
                                                     <td><?php echo $row->pat_type;?></td>
                                                     
                                                     <td>
-                                                        <a href="transfer-single-patient.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Transfer Patient</a>
+                                                        <a href="transfer-single-patient?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Transfer Patient</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

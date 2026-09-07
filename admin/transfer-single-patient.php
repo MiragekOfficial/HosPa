@@ -1,7 +1,11 @@
 <!--Server side code to handle  Patient Transfer-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
+	if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['transfer_patient']))
 		{
             $t_pat_number = $_POST['t_pat_number'];
@@ -126,7 +130,7 @@
                                                 <input required="required" type="text" value="Success" class="form-control" name="t_status" id="inputAddress" placeholder="Patient's Addresss">
                                             </div>
 
-                                            <button type="submit" name="transfer_patient" class="ladda-button btn btn-success" data-style="expand-right">Transfer Patient</button>
+                                            <button type="submit" name="transfer_patient" class="ladda-button btn btn-success float-right" data-style="expand-right">Transfer Patient</button>
 
                                         </form>
                                         <!--End Patient Form-->

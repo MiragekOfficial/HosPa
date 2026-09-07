@@ -113,7 +113,7 @@ include '../config.php';
                                                     <td><?php echo $row->phar_cat;?></td>
                                                     <td><?php echo $row->phar_qty;?> Cartons</td>
 
-                                                    <td><a href="view-single-pharm.php?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a></td>
+                                                    <td><a href="view-single-pharm?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

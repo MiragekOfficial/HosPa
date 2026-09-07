@@ -1,7 +1,11 @@
 
 <?php
-	session_start();
-	include('assets/inc/config.php');
+	if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['update_pharmaceutical_category']))
 		{
 			$pharm_cat_name = $_GET['pharm_cat_name'];

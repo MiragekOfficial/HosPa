@@ -164,7 +164,7 @@ include '../config.php';
 
                                                 </div>
 
-                                                <button type="submit" name="add_patient_vitals" class="ladda-button btn btn-success" data-style="expand-right">Add Vitals</button>
+                                                <button type="submit" name="add_patient_vitals" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Vitals</button>
 
                                             </form>
                                             <!--End Patient Form-->

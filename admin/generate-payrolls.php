@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -131,7 +135,7 @@
                                                  
                                                     <td>
                                                        <!-- <a href="manage-payrolls.php?delete_pay_number=<?php echo $row->pay_number;?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete</a> -->
-                                                        <a href="generate-single-employee-payroll.php?pay_number=<?php echo $row->pay_number;?>&&pay_doc_number=<?php echo $row->pay_doc_number;?>" class="badge badge-success"><i class="fas fa-file-invoice-dollar "></i> Generate Payroll</a>
+                                                        <a href="generate-single-employee-payroll?pay_number=<?php echo $row->pay_number;?>&&pay_doc_number=<?php echo $row->pay_doc_number;?>" class="badge badge-success"><i class="fas fa-file-invoice-dollar "></i> Generate Payroll</a>
 
                                                     </td>
                                                 </tr>

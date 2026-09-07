@@ -116,7 +116,7 @@ include '../config.php';
                                                     <td><?php echo $row->pat_age;?> Years</td>
                                                     <td><?php echo $row->pat_type;?></td>
                                                     
-                                                    <td><a href="add-single-lab-test.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Add Lab Test</a></td>
+                                                    <td><a href="add-single-lab-test?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Add Lab Test</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

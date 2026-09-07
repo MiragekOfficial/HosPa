@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+ if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -127,8 +131,8 @@
                                                     <td><?php echo $row->phar_cat;?></td>
                                                     <td><?php echo $row->phar_qty;?> Cartons</td>
                                                     <td>
-                                                        <a href="view-single-pharm.php?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
-                                                        <a href="update-single-pharm.php?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
+                                                        <a href="view-single-pharm?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
+                                                        <a href="update-single-pharm?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
                                                         <a href="manage-pharmaceuticals.php?delete_pharm_name=<?php echo $row->phar_id;?>" class="badge badge-danger"><i class="fas fa-trash-alt"></i> Delete</a>
 
                                                     </td>

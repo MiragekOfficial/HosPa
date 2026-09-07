@@ -1,6 +1,10 @@
 <?php
-	session_start();
-	include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
 		if(isset($_POST['reset_pwd']))
 		{
             //generate random password and a token 

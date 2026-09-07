@@ -254,7 +254,7 @@ $doc_number = $_SESSION['doc_number'];
                                                     <?php echo $row->pat_age; ?> Years
                                                 </td>
                                                 <td>
-                                                    <a href="view-single-patient.php?pat_id=<?php echo $row->pat_id; ?>&&pat_number=<?php echo $row->pat_number; ?>&&pat_name=<?php echo $row->pat_fname; ?>_<?php echo $row->pat_lname; ?>"
+                                                    <a href="view-single-patient?pat_id=<?php echo $row->pat_id; ?>&&pat_number=<?php echo $row->pat_number; ?>&&pat_name=<?php echo $row->pat_fname; ?>_<?php echo $row->pat_lname; ?>"
                                                         class="btn btn-xs btn-success"><i class="mdi mdi-eye"></i>
                                                         View</a>
                                                 </td>

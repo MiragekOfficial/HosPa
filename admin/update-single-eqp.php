@@ -1,7 +1,11 @@
 
 <?php
-	session_start();
-	include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
         if(isset($_POST['update_equipments']))
         
         {
@@ -133,7 +137,7 @@
                                                     <textarea required="required" type="text" class="form-control" name="eqp_desc" id="editor"><?php echo $row->eqp_desc;?></textarea>
                                                 </div>
 
-                                            <button type="submit" name="update_equipments" class="ladda-button btn btn-success" data-style="expand-right">Update Equipment</button>
+                                            <button type="submit" name="update_equipments" class="ladda-button btn btn-success float-right" data-style="expand-right">Update Equipment</button>
 
                                             </form>
                                         

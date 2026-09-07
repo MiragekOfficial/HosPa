@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -128,7 +132,7 @@
                                                     <td><?php echo $row->mdr_pat_ailment;?></td>
                                                     <td><?php echo $row->mdr_pat_age;?> Years</td>
                                                     <td>
-                                                        <a href="view-single-medical-record.php?mdr_id=<?php echo $row->mdr_id;?>&&mdr_number=<?php echo $row->mdr_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
+                                                        <a href="view-single-medical-record?mdr_id=<?php echo $row->mdr_id;?>&&mdr_number=<?php echo $row->mdr_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

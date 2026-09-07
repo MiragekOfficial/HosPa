@@ -1,6 +1,10 @@
 <?php
-  session_start();
-  include('assets/inc/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include '../config.php';
+
   include('assets/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['ad_id'];
@@ -112,7 +116,7 @@
                                                     <td><?php echo $row->pat_age;?> Years</td>
                                                     <td><?php echo $row->pat_type;?></td>
                                                     
-                                                    <td><a href="add-single-patient-medical-record.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class=" fas fa-file-signature"></i> Add Medical Record</a></td>
+                                                    <td><a href="add-single-patient-medical-record?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class=" fas fa-file-signature"></i> Add Medical Record</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

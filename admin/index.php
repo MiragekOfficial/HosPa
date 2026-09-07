@@ -1,6 +1,10 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
-    include('assets/inc/config.php');//get configuration file
+}
+
+include '../config.php';
+
     if(isset($_POST['admin_login']))
     {
         $ad_email=$_POST['ad_email'];

@@ -122,7 +122,7 @@ include '../config.php';
                                                 <textarea required="required" type="text" class="form-control" name="pharm_cat_desc" id="editor"></textarea>
                                             </div>
 
-                                           <button type="submit" name="add_pharmaceutical_category" class="ladda-button btn btn-success" data-style="expand-right">Add Category</button>
+                                           <button type="submit" name="add_pharmaceutical_category" class="ladda-button btn btn-success float-right" data-style="expand-right">Add Category</button>
 
                                         </form>
                                      
