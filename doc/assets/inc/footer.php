@@ -1,6 +1,6 @@
 <footer class="hospa__footer">
     <span class="hospa__footer-copy">
-        2020 - <?php echo date('Y'); ?> &copy; Hospital Management Information System. 
+        2020 - <?php echo date('Y'); ?> &copy; HosPa | Hospital Management Information System. 
         Developed By <a href="https://equalfaith.org">EqualFaith</a>
     </span>
     <span>

@@ -20,6 +20,19 @@ function has_active_sub($pages, $current_page) {
     }
     return false;
 }
+
+// Define all page groups for active detection
+$patients_pages = ['register-patient', 'view-patients', 'manage-patient', 'discharge-patient', 'patient-transfer', 'view-single-patient'];
+$pharmacy_pages = ['add-pharm-cat', 'view-pharm-cat', 'manage-pharm-cat', 'add-pharmaceuticals', 'view-pharmaceuticals', 'manage-pharmaceuticals', 'add-presc', 'view-presc', 'manage-presc'];
+$inventory_pages = ['pharm-inventory', 'equipments-inventory'];
+$lab_pages = ['patient-lab-test', 'patient-lab-result', 'patient-lab-vitals', 'lab-report'];
+$payroll_pages = ['view-payrolls'];
+
+$patients_active = has_active_sub($patients_pages, $current_page);
+$pharmacy_active = has_active_sub($pharmacy_pages, $current_page);
+$inventory_active = has_active_sub($inventory_pages, $current_page);
+$lab_active = has_active_sub($lab_pages, $current_page);
+$payroll_active = has_active_sub($payroll_pages, $current_page);
 ?>
 <aside class="hospa__sidebar" id="hospa__sidebar">
     <div class="hospa__sidebar-brand">
@@ -38,10 +51,6 @@ function has_active_sub($pages, $current_page) {
         </a>
 
         <!-- Patients -->
-        <?php 
-        $patients_pages = ['register-patient', 'view-patients', 'manage-patient', 'discharge-patient', 'patient-transfer', 'view-single-patient'];
-        $patients_active = has_active_sub($patients_pages, $current_page);
-        ?>
         <div class="hospa__nav-item hospa__has-children <?php echo $patients_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
             <span><i class="fab fa-accessible-icon"></i> Patients</span>
             <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
@@ -56,10 +65,6 @@ function has_active_sub($pages, $current_page) {
         </ul>
 
         <!-- Pharmacy -->
-        <?php 
-        $pharmacy_pages = ['add-pharm-cat', 'view-pharm-cat', 'manage-pharm-cat', 'add-pharmaceuticals', 'view-pharmaceuticals', 'manage-pharmaceuticals', 'add-presc', 'view-presc', 'manage-presc'];
-        $pharmacy_active = has_active_sub($pharmacy_pages, $current_page);
-        ?>
         <div class="hospa__nav-item hospa__has-children <?php echo $pharmacy_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
             <span><i class="mdi mdi-pill"></i> Pharmacy</span>
             <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
@@ -79,10 +84,6 @@ function has_active_sub($pages, $current_page) {
         </ul>
 
         <!-- Inventory -->
-        <?php 
-        $inventory_pages = ['pharm-inventory', 'equipments-inventory'];
-        $inventory_active = has_active_sub($inventory_pages, $current_page);
-        ?>
         <div class="hospa__nav-item hospa__has-children <?php echo $inventory_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
             <span><i class="fas fa-funnel-dollar"></i> Inventory</span>
             <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
@@ -93,10 +94,6 @@ function has_active_sub($pages, $current_page) {
         </ul>
 
         <!-- Laboratory -->
-        <?php 
-        $lab_pages = ['patient-lab-test', 'patient-lab-result', 'patient-lab-vitals', 'lab-report'];
-        $lab_active = has_active_sub($lab_pages, $current_page);
-        ?>
         <div class="hospa__nav-item hospa__has-children <?php echo $lab_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
             <span><i class="mdi mdi-flask"></i> Laboratory</span>
             <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
@@ -109,10 +106,6 @@ function has_active_sub($pages, $current_page) {
         </ul>
 
         <!-- Payrolls -->
-        <?php 
-        $payroll_pages = ['view-payrolls'];
-        $payroll_active = has_active_sub($payroll_pages, $current_page);
-        ?>
         <div class="hospa__nav-item hospa__has-children <?php echo $payroll_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
             <span><i class="mdi mdi-cash-refund"></i> Payrolls</span>
             <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
@@ -125,60 +118,3 @@ function has_active_sub($pages, $current_page) {
 
 <!-- Sidebar Overlay -->
 <div class="hospa__sidebar-overlay" id="hospa__sidebarOverlay"></div>
-
-<script>
-// Toggle submenu
-function toggleSubMenu(element) {
-    element.classList.toggle('open');
-    const subMenu = element.nextElementSibling;
-    if (subMenu && subMenu.classList.contains('hospa__sub-menu')) {
-        subMenu.classList.toggle('open');
-    }
-}
-
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const sidebar = document.getElementById('hospa__sidebar');
-    const overlay = document.getElementById('hospa__sidebarOverlay');
-    const menuToggle = document.getElementById('hospa__menuToggle');
-    const sidebarClose = document.getElementById('hospa__sidebarClose');
-
-    function openSidebar() {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeSidebar() {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', openSidebar);
-    }
-
-    if (sidebarClose) {
-        sidebarClose.addEventListener('click', closeSidebar);
-    }
-
-    if (overlay) {
-        overlay.addEventListener('click', closeSidebar);
-    }
-
-    // Close on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
-            closeSidebar();
-        }
-    });
-
-    // Close on window resize (if going from mobile to desktop)
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 992 && sidebar.classList.contains('open')) {
-            closeSidebar();
-        }
-    });
-});
-</script>
