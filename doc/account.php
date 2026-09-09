@@ -30,10 +30,6 @@ include '../config.php';
                 <?php include("assets/inc/sidebar.php");?>
             <!-- Left Sidebar End -->
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
-
             <!--Get Details Of A Single User And Display Them Here-->
             <?php
                 $doc_number=$_SESSION['doc_number'];

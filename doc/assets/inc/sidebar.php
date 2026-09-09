@@ -1,158 +1,184 @@
-<div class="left-side-menu">
+<!-- Sidebar - Hardened with hospa_ classes -->
+<?php
+// Get current page name from URL
+$current_page = basename($_SERVER['PHP_SELF'], '.php');
+$full_url = $_SERVER['REQUEST_URI'];
+$path_parts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+$current_page_path = end($path_parts);
 
-                <div class="slimscroll-menu">
+// Helper function to check if link is active
+function is_active($page, $current) {
+    return ($page == $current) ? 'active' : '';
+}
 
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
+// Helper function for sub-menu active
+function has_active_sub($pages, $current_page) {
+    foreach ($pages as $page) {
+        if (strpos($current_page, $page) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+?>
+<aside class="hospa__sidebar" id="hospa__sidebar">
+    <div class="hospa__sidebar-brand">
+        <i class="fas fa-heartbeat"></i>
+        <span>HMIS · Med</span>
+        <button class="hospa__sidebar-close" id="hospa__sidebarClose">
+            <i class="fe-x"></i>
+        </button>
+    </div>
+    <div class="hospa__sidebar-menu">
+        <div class="hospa__menu-title">Navigation</div>
 
-                        <ul class="metismenu" id="side-menu">
+        <!-- Dashboard -->
+        <a href="dashboard" class="hospa__nav-item <?php echo ($current_page == 'dashboard' || $current_page_path == 'dashboard') ? 'active' : ''; ?>">
+            <i class="fe-airplay"></i> <span>Dashboard</span>
+        </a>
 
-                            <li class="menu-title">Navigation</li>
+        <!-- Patients -->
+        <?php 
+        $patients_pages = ['register-patient', 'view-patients', 'manage-patient', 'discharge-patient', 'patient-transfer', 'view-single-patient'];
+        $patients_active = has_active_sub($patients_pages, $current_page);
+        ?>
+        <div class="hospa__nav-item hospa__has-children <?php echo $patients_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
+            <span><i class="fab fa-accessible-icon"></i> Patients</span>
+            <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
+        </div>
+        <ul class="hospa__sub-menu <?php echo $patients_active ? 'open' : ''; ?>">
+            <li><a href="register-patient" class="<?php echo ($current_page == 'register-patient') ? 'active' : ''; ?>">Register Patient</a></li>
+            <li><a href="view-patients" class="<?php echo ($current_page == 'view-patients') ? 'active' : ''; ?>">View Patients</a></li>
+            <li><a href="manage-patient" class="<?php echo ($current_page == 'manage-patient') ? 'active' : ''; ?>">Manage Patients</a></li>
+            <hr class="hospa__sub-divider">
+            <li><a href="discharge-patient" class="<?php echo ($current_page == 'discharge-patient') ? 'active' : ''; ?>">Discharge Patients</a></li>
+            <li><a href="patient-transfer" class="<?php echo ($current_page == 'patient-transfer') ? 'active' : ''; ?>">Patient Transfers</a></li>
+        </ul>
 
-                            <li>
-                                <a href="dashboard">
-                                    <i class="fe-airplay"></i>
-                                    <span> Dashboard </span>
-                                </a>
-                                
-                            </li>
+        <!-- Pharmacy -->
+        <?php 
+        $pharmacy_pages = ['add-pharm-cat', 'view-pharm-cat', 'manage-pharm-cat', 'add-pharmaceuticals', 'view-pharmaceuticals', 'manage-pharmaceuticals', 'add-presc', 'view-presc', 'manage-presc'];
+        $pharmacy_active = has_active_sub($pharmacy_pages, $current_page);
+        ?>
+        <div class="hospa__nav-item hospa__has-children <?php echo $pharmacy_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
+            <span><i class="mdi mdi-pill"></i> Pharmacy</span>
+            <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
+        </div>
+        <ul class="hospa__sub-menu <?php echo $pharmacy_active ? 'open' : ''; ?>">
+            <li><a href="add-pharm-cat" class="<?php echo ($current_page == 'add-pharm-cat') ? 'active' : ''; ?>">Add Pharm Category</a></li>
+            <li><a href="view-pharm-cat" class="<?php echo ($current_page == 'view-pharm-cat') ? 'active' : ''; ?>">View Pharm Category</a></li>
+            <li><a href="manage-pharm-cat" class="<?php echo ($current_page == 'manage-pharm-cat') ? 'active' : ''; ?>">Manage Pharm Category</a></li>
+            <hr class="hospa__sub-divider">
+            <li><a href="add-pharmaceuticals" class="<?php echo ($current_page == 'add-pharmaceuticals') ? 'active' : ''; ?>">Add Pharmaceuticals</a></li>
+            <li><a href="view-pharmaceuticals" class="<?php echo ($current_page == 'view-pharmaceuticals') ? 'active' : ''; ?>">View Pharmaceuticals</a></li>
+            <li><a href="manage-pharmaceuticals" class="<?php echo ($current_page == 'manage-pharmaceuticals') ? 'active' : ''; ?>">Manage Pharmaceuticals</a></li>
+            <hr class="hospa__sub-divider">
+            <li><a href="add-presc" class="<?php echo ($current_page == 'add-presc') ? 'active' : ''; ?>">Add Prescriptions</a></li>
+            <li><a href="view-presc" class="<?php echo ($current_page == 'view-presc') ? 'active' : ''; ?>">View Prescriptions</a></li>
+            <li><a href="manage-presc" class="<?php echo ($current_page == 'manage-presc') ? 'active' : ''; ?>">Manage Prescriptions</a></li>
+        </ul>
 
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class="fab fa-accessible-icon "></i>
-                                    <span> Patients </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="register-patient">Register Patient</a>
-                                    </li>
-                                    <li>
-                                        <a href="view-patients">View Patients</a>
-                                    </li>
-                                    <li>
-                                        <a href="manage-patient">Manage Patients</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a href="discharge-patient">Discharge Patients</a>
-                                    </li>
-                                    <li>
-                                        <a href="patient-transfer">Patient Transfers</a>
-                                    </li>
-                                </ul>
-                            </li>
+        <!-- Inventory -->
+        <?php 
+        $inventory_pages = ['pharm-inventory', 'equipments-inventory'];
+        $inventory_active = has_active_sub($inventory_pages, $current_page);
+        ?>
+        <div class="hospa__nav-item hospa__has-children <?php echo $inventory_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
+            <span><i class="fas fa-funnel-dollar"></i> Inventory</span>
+            <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
+        </div>
+        <ul class="hospa__sub-menu <?php echo $inventory_active ? 'open' : ''; ?>">
+            <li><a href="pharm-inventory" class="<?php echo ($current_page == 'pharm-inventory') ? 'active' : ''; ?>">Pharmaceuticals</a></li>
+            <li><a href="equipments-inventory" class="<?php echo ($current_page == 'equipments-inventory') ? 'active' : ''; ?>">Assets</a></li>
+        </ul>
 
-                          
+        <!-- Laboratory -->
+        <?php 
+        $lab_pages = ['patient-lab-test', 'patient-lab-result', 'patient-lab-vitals', 'lab-report'];
+        $lab_active = has_active_sub($lab_pages, $current_page);
+        ?>
+        <div class="hospa__nav-item hospa__has-children <?php echo $lab_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
+            <span><i class="mdi mdi-flask"></i> Laboratory</span>
+            <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
+        </div>
+        <ul class="hospa__sub-menu <?php echo $lab_active ? 'open' : ''; ?>">
+            <li><a href="patient-lab-test" class="<?php echo ($current_page == 'patient-lab-test') ? 'active' : ''; ?>">Patient Lab Tests</a></li>
+            <li><a href="patient-lab-result" class="<?php echo ($current_page == 'patient-lab-result') ? 'active' : ''; ?>">Patient Lab Results</a></li>
+            <li><a href="patient-lab-vitals" class="<?php echo ($current_page == 'patient-lab-vitals') ? 'active' : ''; ?>">Patient Vitals</a></li>
+            <li><a href="lab-report" class="<?php echo ($current_page == 'lab-report') ? 'active' : ''; ?>">Lab Reports</a></li>
+        </ul>
 
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class="mdi mdi-pill"></i>
-                                    <span> Pharmacy </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="add-pharm-cat">Add Pharm Category</a>
-                                    </li>
-                                    <li>
-                                        <a href="view-pharm-cat">View Pharm Category</a>
-                                    </li>
-                                    <li>
-                                        <a href="manage-pharm-cat">Manage Pharm Category</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a href="add-pharmaceuticals">Add Pharmaceuticals</a>
-                                    </li>
-                                    <li>
-                                        <a href="view-pharmaceuticals">View Pharmaceuticals</a>
-                                    </li>
-                                    <li>
-                                        <a href="manage-pharmaceuticals">Manage Pharmaceuticals</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a href="add-presc">Add Prescriptions</a>
-                                    </li>
-                                    <li>
-                                        <a href="view-presc">View Prescriptions</a>
-                                    </li>
-                                    <li>
-                                        <a href="manage-presc">Manage Prescriptions</a>
-                                    </li>
-                                </ul>
-                            </li>
+        <!-- Payrolls -->
+        <?php 
+        $payroll_pages = ['view-payrolls'];
+        $payroll_active = has_active_sub($payroll_pages, $current_page);
+        ?>
+        <div class="hospa__nav-item hospa__has-children <?php echo $payroll_active ? 'open' : ''; ?>" onclick="toggleSubMenu(this)">
+            <span><i class="mdi mdi-cash-refund"></i> Payrolls</span>
+            <span class="hospa__arrow"><i class="fas fa-chevron-down"></i></span>
+        </div>
+        <ul class="hospa__sub-menu <?php echo $payroll_active ? 'open' : ''; ?>">
+            <li><a href="view-payrolls" class="<?php echo ($current_page == 'view-payrolls') ? 'active' : ''; ?>">My Payrolls</a></li>
+        </ul>
+    </div>
+</aside>
 
-                            
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class=" fas fa-funnel-dollar "></i>
-                                    <span> Inventory </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                   
-                                    <li>
-                                        <a href="pharm-inventory">Pharmaceuticals</a>
-                                    </li>
+<!-- Sidebar Overlay -->
+<div class="hospa__sidebar-overlay" id="hospa__sidebarOverlay"></div>
 
-                                    <li>
-                                        <a href="equipments-inventory">Assets</a>
-                                    </li>
-                                    
-                                </ul>
-                            </li>
-                
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class="mdi mdi-flask"></i>
-                                    <span> Laboratory </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="patient-lab-test">Patient Lab Tests</a>
-                                    </li>
-                                    <li>
-                                        <a href="patient-lab-result">Patient Lab Results</a>
-                                    </li>
-                                    <li>
-                                        <a href="patient-lab-vitals">Patient Vitals</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="lab-report">Lab Reports</a>
-                                    </li>
-                                    <hr>
-                                    
-                                </ul>
-                            </li>
+<script>
+// Toggle submenu
+function toggleSubMenu(element) {
+    element.classList.toggle('open');
+    const subMenu = element.nextElementSibling;
+    if (subMenu && subMenu.classList.contains('hospa__sub-menu')) {
+        subMenu.classList.toggle('open');
+    }
+}
 
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class="mdi mdi-cash-refund "></i>
-                                    <span> Payrolls </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    
-                                    <li>
-                                        <a href="view-payrolls">My Payrolls</a>
-                                    </li>
-                                </ul>
-                            </li>
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.getElementById('hospa__sidebar');
+    const overlay = document.getElementById('hospa__sidebarOverlay');
+    const menuToggle = document.getElementById('hospa__menuToggle');
+    const sidebarClose = document.getElementById('hospa__sidebarClose');
 
-                            
+    function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-                        </ul>
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
-                    </div>
-                    <!-- End Sidebar -->
+    if (menuToggle) {
+        menuToggle.addEventListener('click', openSidebar);
+    }
 
-                    <div class="clearfix"></div>
+    if (sidebarClose) {
+        sidebarClose.addEventListener('click', closeSidebar);
+    }
 
-                </div>
-                <!-- Sidebar -left -->
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+    }
 
-            </div>
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+            closeSidebar();
+        }
+    });
+
+    // Close on window resize (if going from mobile to desktop)
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992 && sidebar.classList.contains('open')) {
+            closeSidebar();
+        }
+    });
+});
+</script>
