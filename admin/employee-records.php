@@ -111,7 +111,7 @@ include '../config.php';
                                                     <td><?php echo $row->doc_number;?></td>
                                                     <td><?php echo $row->doc_email;?></td>       
                                                     <td><?php echo $row->doc_dept;?></td>                                                                                               
-                                                    <td><a href="view-single-employee.php?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a></td>
+                                                    <td><a href="view-single-employee?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

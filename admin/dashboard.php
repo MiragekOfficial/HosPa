@@ -285,7 +285,7 @@ include '../config.php';
                                                         <?php echo $row->doc_dept;?>
                                                     </td>
                                                     <td>
-                                                        <a href="view-single-employee.php?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="btn btn-xs btn-primary"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="view-single-employee?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="btn btn-xs btn-primary"><i class="mdi mdi-eye"></i> View</a>
                                                     </td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
                                                 </tr>
                                             </tbody>

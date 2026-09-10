@@ -110,7 +110,7 @@ include '../config.php';
                                                     <td>$ <?php echo $row->acc_amount;?></td>
                                                     <td><?php echo $row->acc_type;?></td>
                                                     <td>
-                                                        <a href="view-single-account.php?acc_number=<?php echo $row->acc_number;?>" class="badge badge-success"><i class="fas fa-eye "></i> View</a>
+                                                        <a href="view-single-account?acc_number=<?php echo $row->acc_number;?>" class="badge badge-success"><i class="fas fa-eye "></i> View</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

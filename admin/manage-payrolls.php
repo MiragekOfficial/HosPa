@@ -129,7 +129,7 @@ include '../config.php';
                                                     <td>$ <?php echo $row->pay_emp_salary;?></td>
                                                  
                                                     <td>
-                                                        <a href="manage-payrolls.php?delete_pay_number=<?php echo $row->pay_number;?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete</a>
+                                                        <a href="manage-payrolls?delete_pay_number=<?php echo $row->pay_number;?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete</a>
                                                         <a href="update-single-employee-payroll?pay_number=<?php echo $row->pay_number;?>" class="badge badge-success"><i class="fas fa-edit "></i>Update Payroll</a>
 
                                                     </td>

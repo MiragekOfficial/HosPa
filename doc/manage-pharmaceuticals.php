@@ -137,7 +137,7 @@ include '../config.php';
                                                     <td>
                                                         <a href="view-single-pharm?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-success"><i class="far fa-eye "></i> View</a>
                                                         <a href="update-single-pharm?phar_bcode=<?php echo $row->phar_bcode;?>" class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
-                                                        <!--<a href="manage-pharmaceuticals.php?delete_pharm_name=<?php echo $row->phar_id;?>" class="badge badge-danger"><i class="fas fa-trash-alt"></i> Delete</a>-->
+                                                        <!--<a href="manage-pharmaceuticals?delete_pharm_name=<?php echo $row->phar_id;?>" class="badge badge-danger"><i class="fas fa-trash-alt"></i> Delete</a>-->
 
                                                     </td>
                                                 </tr>

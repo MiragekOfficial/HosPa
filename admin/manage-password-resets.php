@@ -120,7 +120,7 @@ include '../config.php';
 
                                                     if($row->status == 'Pending')
                                                     {
-                                                        $action = "<td><a href='update-doc-password.php?email=$row->email&pwd=$row->pwd' class='badge badge-danger'><i class='fas fa-edit'></i>Reset Password</a></td>";
+                                                        $action = "<td><a href='update-doc-password?email=$row->email&pwd=$row->pwd' class='badge badge-danger'><i class='fas fa-edit'></i>Reset Password</a></td>";
                                                     }
                                                     else
                                                     {

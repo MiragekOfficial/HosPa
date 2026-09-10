@@ -133,7 +133,7 @@ include '../config.php';
                                                     <td><?php echo $row->doc_email;?></td>
                                                     
                                                     <td>
-                                                        <a href="transfer-single-employee.php?doc_number=<?php echo $row->doc_number;?>" class="badge badge-warning"><i class="mdi mdi-check-box-outline "></i> Transfer Employee</a>
+                                                        <a href="transfer-single-employee?doc_number=<?php echo $row->doc_number;?>" class="badge badge-warning"><i class="mdi mdi-check-box-outline "></i> Transfer Employee</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>

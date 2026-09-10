@@ -113,7 +113,7 @@ include '../config.php';
                                                     <td><?php echo $row->doc_dept;?></td>
                                                  
                                                     <td>
-                                                        <a href="view-single-employee.php?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="badge badge-primary"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="view-single-employee?doc_id=<?php echo $row->doc_id;?>&&doc_number=<?php echo $row->doc_number;?>" class="badge badge-primary"><i class="mdi mdi-eye"></i> View</a>
                                                         <a href="add-single-employee-payroll?doc_number=<?php echo $row->doc_number;?>" class="badge badge-success"><i class="fas fa-eye-dropper "></i> Add Payroll</a>
 
                                                     </td>

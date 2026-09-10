@@ -136,7 +136,7 @@ include '../config.php';
                                                     <td>
                                                         <a href="view-single-pres?pres_number=<?php echo $row->pres_number;?>" class="badge badge-success"><i class="fas fa-eye"></i> View</a>
                                                         <a href="upate-single-pres?pres_number=<?php echo $row->pres_number;?>" class="badge badge-warning"><i class="fas fa-eye-dropper "></i> Update</a>
-                                                        <a href="manage-presc.php?delete_pres_number=<?php echo $row->pres_number;?>" class="badge badge-danger"><i class=" fas fa-trash-alt "></i> Delete</a>
+                                                        <a href="manage-presc?delete_pres_number=<?php echo $row->pres_number;?>" class="badge badge-danger"><i class=" fas fa-trash-alt "></i> Delete</a>
 
                                                     </td>
                                                 </tr>

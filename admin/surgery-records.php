@@ -137,7 +137,7 @@ include '../config.php';
 
                                                     
                                                     <td>
-                                                        <a href="view-single-patient-surgery.php?s_number=<?php echo $row->s_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="view-single-patient-surgery?s_number=<?php echo $row->s_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
                                                         <!--<a href="manage-theatre-patient?delete_s_number=<?php echo $row->s_number?>" class="badge badge-danger"><i class="fas fa-trash"></i> Delete Record</a>-->
                                                     </td>
                                                 </tr>
