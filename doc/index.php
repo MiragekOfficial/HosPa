@@ -4,11 +4,11 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
 include '../config.php';
 
-// Check if user is logged in
-if (isset($_SESSION['doc_id']) || isset($_SESSION['doc_number'])) {
-    require 'dashboard.php';
+if (!empty($_SESSION['doc_id'])) {
+    header('Location: dashboard');
     exit();
 }
 
