@@ -121,4 +121,8 @@ HosPa is a comprehensive, feature-rich Hospital Management System that bridges t
 
 ---
 
+Have a feedback or comment? Help us improve to [opening an issue](https://github.com/MiragekOfficial/HosPa/issues/new).
+
+For Demo: [you can watch the prepared video](https://youtube.com)
+
 **Start building your healthcare solution with HosPa today!**
