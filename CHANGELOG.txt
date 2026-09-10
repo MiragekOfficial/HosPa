@@ -9,13 +9,12 @@ Hospa V2
 4. Test all doc pages, fix issues if any ✅
 5. Test all doc pages, fix issues if any ✅
 
-6. Fix & delete duplicate files
-7. Redesign the doc dashboard layout
-8. Redesign the admin dashboard layout
+6. Fix & delete some duplicate files ✅
+7. Redesign the doc dashboard layout ✅
+8. Improve the admin dashboard layout ✅
 
-9. Add terms, privacy, about, contact us pages
-10. Add basic website to admin
-11. Add demo database reset (backend, button in auth, dashboard)
+9. Finalize the homepage
+10. Add database reset feature/button for demo
 
-12. Publish to different php code sites and EqualFaith-Free
+11. Publish to different php code sites and EqualFaith-Free
 

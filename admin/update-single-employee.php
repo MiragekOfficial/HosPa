@@ -13,7 +13,7 @@ include '../config.php';
             $doc_email=$_POST['doc_email'];
             $doc_pwd=sha1(md5($_POST['doc_pwd']));
             $doc_dpic=$_FILES["doc_dpic"]["name"];
-		    move_uploaded_file($_FILES["doc_dpic"]["tmp_name"],"../doc/assets/images/users/".$_FILES["doc_dpic"]["name"]);
+		    move_uploaded_file($_FILES["doc_dpic"]["tmp_name"],"../assets/images/users/".$_FILES["doc_dpic"]["name"]);
 
             //sql to insert captured values
 			$query="UPDATE his_docs SET doc_fname=?, doc_lname=?,  doc_email=?, doc_pwd=?, doc_dpic=? WHERE doc_number = ?";

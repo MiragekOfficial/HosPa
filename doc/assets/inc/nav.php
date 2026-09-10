@@ -47,7 +47,7 @@ while($row = $res->fetch_object()) {
         <!-- User Profile -->
         <div class="hospa__user-profile dropdown">
             <div class="hospa__user-avatar">
-                <img src="assets/images/users/<?php echo $row->doc_dpic; ?>" alt="Profile">
+                <img src="../assets/images/users/<?php echo $row->doc_dpic; ?>" alt="Profile">
             </div>
             <span class="hospa__user-name dropdown-toggle" data-toggle="dropdown">
                 <?php echo $row->doc_fname; ?> <?php echo $row->doc_lname; ?> 

@@ -68,7 +68,7 @@ include '../config.php';
                         <div class="row">
                             <div class="col-lg-6 col-xl-6">
                                 <div class="card-box text-center">
-                                    <img src="../doc/assets/images/users/<?php echo $row->doc_dpic;?>" class="rounded-circle avatar-lg img-thumbnail"
+                                    <img src="../assets/images/users/<?php echo $row->doc_dpic;?>" class="rounded-circle avatar-lg img-thumbnail"
                                         alt="profile-image">
 
                                     

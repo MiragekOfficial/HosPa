@@ -74,7 +74,7 @@ include '../config.php';
                         <div class="row">
                             <div class="col-lg-4 col-xl-4">
                                 <div class="card-box text-center">
-                                    <img src="assets/images/users/patient.png" class="rounded-circle avatar-lg img-thumbnail"
+                                    <img src="../assets/images/users/patient.png" class="rounded-circle avatar-lg img-thumbnail"
                                         alt="profile-image">
 
                                     

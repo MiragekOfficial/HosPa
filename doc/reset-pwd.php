@@ -52,7 +52,7 @@ include '../config.php';
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -101,7 +101,7 @@ include '../config.php';
                                 
                                 <div class="text-center w-75 m-auto">
                                     <a href="reset-pwd">
-                                        <span><img src="assets/images/logo-dark.png" alt="" height="22"></span>
+                                        <span><img src="../assets/images/logo-dark.png" alt="" height="22"></span>
                                     </a>
                                     <p class="text-muted mb-4 mt-3">Enter your email address and we'll send you an email with instructions to reset your password.</p>
                                 </div>

@@ -271,7 +271,7 @@ include '../config.php';
                                             <tbody>
                                                 <tr>
                                                     <td style="width: 36px;">
-                                                        <img src="../assets/images/users/<?php echo $row->doc_dpic;?>" alt="img" title="contact-img" class="rounded-circle avatar-sm" />
+                                                        <img src="../../assets/images/users/<?php echo $row->doc_dpic;?>" alt="img" title="contact-img" class="rounded-circle avatar-sm" />
                                                     </td>
                                                     <td>
                                                     </td>
@@ -327,7 +327,7 @@ include '../config.php';
                 <!-- User box -->
                 <div class="user-box">
                     <div class="user-img">
-                        <img src="../assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-fluid">
+                        <img src="../../assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-fluid">
                         <a href="javascript:void(0);" class="user-edit"><i class="mdi mdi-pencil"></i></a>
                     </div>
             
@@ -380,28 +380,28 @@ include '../config.php';
                 <div class="p-3">
                     <div class="inbox-widget">
                         <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="../assets/images/users/user-2.jpg" class="rounded-circle" alt=""></div>
+                            <div class="inbox-item-img"><img src="../../assets/images/users/user-2.jpg" class="rounded-circle" alt=""></div>
                             <p class="inbox-item-author"><a href="javascript: void(0);" class="text-dark">Tomaslau</a></p>
                             <p class="inbox-item-text">I've finished it! See you so...</p>
                         </div>
                         <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="../assets/images/users/user-3.jpg" class="rounded-circle" alt=""></div>
+                            <div class="inbox-item-img"><img src="../../assets/images/users/user-3.jpg" class="rounded-circle" alt=""></div>
                             <p class="inbox-item-author"><a href="javascript: void(0);" class="text-dark">Stillnotdavid</a></p>
                             <p class="inbox-item-text">This theme is awesome!</p>
                         </div>
                         <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="../assets/images/users/user-4.jpg" class="rounded-circle" alt=""></div>
+                            <div class="inbox-item-img"><img src="../../assets/images/users/user-4.jpg" class="rounded-circle" alt=""></div>
                             <p class="inbox-item-author"><a href="javascript: void(0);" class="text-dark">Kurafire</a></p>
                             <p class="inbox-item-text">Nice to meet you</p>
                         </div>
 
                         <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="../assets/images/users/user-5.jpg" class="rounded-circle" alt=""></div>
+                            <div class="inbox-item-img"><img src="../../assets/images/users/user-5.jpg" class="rounded-circle" alt=""></div>
                             <p class="inbox-item-author"><a href="javascript: void(0);" class="text-dark">Shahedk</a></p>
                             <p class="inbox-item-text">Hey! there I'm available...</p>
                         </div>
                         <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="../assets/images/users/user-6.jpg" class="rounded-circle" alt=""></div>
+                            <div class="inbox-item-img"><img src="../../assets/images/users/user-6.jpg" class="rounded-circle" alt=""></div>
                             <p class="inbox-item-author"><a href="javascript: void(0);" class="text-dark">Adhamdannaway</a></p>
                             <p class="inbox-item-text">This theme is awesome!</p>
                         </div>

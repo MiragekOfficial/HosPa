@@ -30,7 +30,7 @@
             
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="assets/images/users/<?php echo $row->ad_dpic;?>" alt="dpic" class="rounded-circle">
+                    <img src="../assets/images/users/<?php echo $row->ad_dpic;?>" alt="dpic" class="rounded-circle">
                     <span class="pro-user-name ml-1">
                         <?php echo $row->ad_fname;?> <?php echo $row->ad_lname;?> <i class="mdi mdi-chevron-down"></i> 
                     </span>
@@ -67,12 +67,12 @@
         <div class="logo-box">
             <a href="dashboard" class="logo text-center">
                 <span class="logo-lg">
-                    <img src="assets/images/logo-light.png" alt="" height="18">
+                    <img src="../assets/images/logo-light.png" alt="" height="18">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
                 </span>
                 <span class="logo-sm">
                     <!-- <span class="logo-sm-text-dark">U</span> -->
-                    <img src="assets/images/logo-sm-white.png" alt="" height="24">
+                    <img src="../assets/images/logo-sm-white.png" alt="" height="24">
                 </span>
             </a>
         </div>

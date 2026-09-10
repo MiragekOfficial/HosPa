@@ -13,7 +13,7 @@ include '../config.php';
             $ad_email=$_POST['ad_email'];
            // $doc_pwd=sha1(md5($_POST['doc_pwd']));
             $ad_dpic=$_FILES["ad_dpic"]["name"];
-		    move_uploaded_file($_FILES["ad_dpic"]["tmp_name"],"assets/images/users/".$_FILES["ad_dpic"]["name"]);
+		    move_uploaded_file($_FILES["ad_dpic"]["tmp_name"],"../assets/images/users/".$_FILES["ad_dpic"]["name"]);
 
             //sql to insert captured values
 			$query="UPDATE his_admin SET ad_fname=?, ad_lname=?,  ad_email=?, ad_dpic=? WHERE ad_id = ?";
@@ -117,7 +117,7 @@ include '../config.php';
                             <div class="row">
                                 <div class="col-lg-4 col-xl-4">
                                     <div class="card-box text-center">
-                                        <img src="assets/images/users/<?php echo $row->ad_dpic;?>" class="rounded-circle avatar-lg img-thumbnail"
+                                        <img src="../assets/images/users/<?php echo $row->ad_dpic;?>" class="rounded-circle avatar-lg img-thumbnail"
                                             alt="profile-image">
 
                                         <h4 class="mb-0"><?php echo $row->ad_fname;?> <?php echo $row->ad_lname;?></h4>

@@ -74,7 +74,7 @@ include '../config.php';
                                                 <div class="tab-content pt-0">
 
                                                     <div class="tab-pane active show" id="product-1-item">
-                                                        <img src="assets/images/vendor.png" alt="" class="img-fluid mx-auto d-block rounded">
+                                                        <img src="../assets/images/vendor.png" alt="" class="img-fluid mx-auto d-block rounded">
                                                     </div>
                             
                                                 </div>
