@@ -1,0 +1,43 @@
+# ============================================================
+#  .htaccess
+# ============================================================
+
+Options -Indexes -MultiViews
+DirectoryIndex index.php index.html
+
+RewriteEngine On
+
+# 1. Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [L]
+
+# 2. Block hidden files/folders
+RewriteRule (^|/)\. - [F,L]
+
+# 3. Block sensitive dirs
+RewriteRule ^(includes|inc|vendor|node_modules|config|logs?|tmp|readme|storage|private|backups?)/ - [F,L,NC]
+
+# 4. No PHP in uploads
+RewriteRule ^(uploads|files|images|assets)/.*\.(php|phtml|phar)$ - [F,L,NC]
+
+# 5. Block sensitive files
+<FilesMatch "\.(env|ini|log|sql|bak|conf|yml|lock)$|^\.ht">
+    Require all denied
+</FilesMatch>
+
+# 6. Cache static assets (1 year)
+<FilesMatch "\.(css|js|mjs|woff2?|ttf|otf|svg|png|jpe?g|gif|webp|avif|ico|mp4|webm|mp3)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+    Header append Vary Accept-Encoding
+</FilesMatch>
+
+# 7. Never cache HTML/JSON
+<FilesMatch "\.(html?|json|xml)$">
+    Header set Cache-Control "no-cache"
+</FilesMatch>
+
+# 8. Gzip
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>

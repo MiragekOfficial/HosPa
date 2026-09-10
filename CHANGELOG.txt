@@ -13,7 +13,7 @@ Hospa V2
 7. Redesign the doc dashboard layout ✅
 8. Improve the admin dashboard layout ✅
 
-9. Finalize the homepage
+9. Finalize the homepage ✅
 10. Add database reset feature/button for demo
 
 11. Publish to different php code sites and EqualFaith-Free

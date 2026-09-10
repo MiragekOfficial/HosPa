@@ -3,6 +3,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+if (isset($_SESSION['ad_id'])) {
+    require 'dashboard.php';
+    exit();
+}
+
 include '../config.php';
 
     if(isset($_POST['admin_login']))

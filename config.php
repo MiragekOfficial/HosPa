@@ -14,6 +14,8 @@ $SITE_NAME_SHORT   =   "Hospa";
 $SITE_NAME_LONG    =   "Hospa - Hospital Management Information System";
 $SITE_BASE         =   "https://hospa-free.xyz";
 
+$SITE_DEMO         =   false;
+
 
 #######################
 # DATABASE
