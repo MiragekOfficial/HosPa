@@ -14,7 +14,5 @@ Hospa V2
 8. Improve the admin dashboard layout ✅
 
 9. Finalize the homepage ✅
-10. Record and publish demo video
-
-11. Publish to different php code sites and EqualFaith-Free
+10. Record and publish demo video ✅
 
