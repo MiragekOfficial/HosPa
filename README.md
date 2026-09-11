@@ -2,8 +2,6 @@
 
 **HosPa** is a free, open-source, web-based Hospital Management System built with PHP, MySQL, and Bootstrap. Originally forked from the [Hospital Management System](https://codeastro.com/hospital-management-system-in-php-with-source-code-adv) by Martin Mbithi Nzilani, it is now actively maintained and enhanced by [Miragek](https://miragek.com) starting from version 2.0. For a complete history of changes, please review the `CHANGELOG.md` file.
 
-NOTE: NOT AVAILABLE FOR PUBLIC USE YET. STILL VERY BUGGY AND UNDERGOING V2. WE WILL REMOVE THIS WARNING ONCE THE PROJECT IS FINISHED.
-
 ---
 
 ## Purpose
